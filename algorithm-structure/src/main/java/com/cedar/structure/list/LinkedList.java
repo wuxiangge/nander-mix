@@ -33,6 +33,7 @@ public class LinkedList<E> {
 
     private int size;
 
+
     public LinkedList() {
         this.dummyHead = new Node(null, null);
         this.size = 0;
