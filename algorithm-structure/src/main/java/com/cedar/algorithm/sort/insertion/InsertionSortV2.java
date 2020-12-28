@@ -44,6 +44,28 @@ public class InsertionSortV2 {
         }
     }
 
+
+    /**
+     * 插入排序算法优化
+     *
+     * @param array
+     * @param <E>
+     */
+    public static <E extends Comparable<? super E>> void sort2(E[] array, int l, int r) {
+        for (int i = l; i < r; i++) {
+            // 待插入的数据
+            E t = array[i];
+            // 应该插入的位置
+            int j;
+            for (j = i; j - 1 >= l && t.compareTo(array[j - 1]) < 0; j--) {
+                array[j] = array[j - 1];
+            }
+            array[j] = t;
+            // help gc
+            t = null;
+        }
+    }
+
     private static <E extends Comparable<E>> void swap(E[] data, int low, int high) {
         E temp = data[low];
         data[low] = data[high];

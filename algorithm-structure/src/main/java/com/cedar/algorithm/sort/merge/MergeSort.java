@@ -1,5 +1,7 @@
 package com.cedar.algorithm.sort.merge;
 
+import com.cedar.algorithm.sort.insertion.InsertionSortV2;
+
 import java.util.Arrays;
 
 /**
@@ -9,7 +11,6 @@ public class MergeSort {
 
     private MergeSort() {
     }
-
 
     /**
      * 自顶向下
@@ -22,17 +23,29 @@ public class MergeSort {
     }
 
     private static <E extends Comparable<? super E>> void mergeSortUpToDown(E[] arr, int l, int r) {
-        if (l > r) {
+//        if (l > r) {
+//            return;
+//        }
+
+        if (r - l <= 15) {
+            // 不进行归并排序 转而使用插入排序算法
+            InsertionSortV2.sort2(arr,l,r);
             return;
         }
+
+
         int mid = l + (r - l) / 2;
         mergeSortUpToDown(arr, l, mid);
         mergeSortUpToDown(arr, mid + 1, r);
-        merge(arr, l, mid, r);
+        if (arr[mid].compareTo(arr[mid + 1]) > 0) {
+            merge(arr, l, mid, r);
+        }
     }
 
     /**
      * 合并两个有序区间 arr[l mid] arr[mid+1,r]
+     * 归并排序算法
+     * 插入排序算法
      *
      * @param arr
      * @param l
@@ -40,14 +53,10 @@ public class MergeSort {
      * @param <E>
      */
     private static <E extends Comparable<? super E>> void merge(E[] arr, int l, int mid, int r) {
-
         E[] temp = Arrays.copyOfRange(arr, l, r + 1);
-
         int i = l;
         int j = mid + 1;
-
         for (int k = l; k <= r; k++) {
-
             if (i > mid) {
                 arr[k] = temp[j - l];
                 j++;
@@ -61,12 +70,7 @@ public class MergeSort {
                 arr[k] = temp[j - l];
                 j++;
             }
-
-
         }
-
-
     }
-
 
 }
