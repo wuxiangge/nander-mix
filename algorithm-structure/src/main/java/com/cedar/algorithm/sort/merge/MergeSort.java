@@ -1,7 +1,5 @@
 package com.cedar.algorithm.sort.merge;
 
-import com.cedar.algorithm.sort.insertion.InsertionSortV2;
-
 import java.util.Arrays;
 
 /**
@@ -23,15 +21,15 @@ public class MergeSort {
     }
 
     private static <E extends Comparable<? super E>> void mergeSortUpToDown(E[] arr, int l, int r) {
-//        if (l > r) {
-//            return;
-//        }
-
-        if (r - l <= 15) {
-            // 不进行归并排序 转而使用插入排序算法
-            InsertionSortV2.sort2(arr,l,r);
+        if (l > r) {
             return;
         }
+
+//        if (r - l <= 15) {
+//            // 不进行归并排序 转而使用插入排序算法
+//            InsertionSortV2.sort2(arr,l,r);
+//            return;
+//        }
 
 
         int mid = l + (r - l) / 2;
@@ -72,5 +70,23 @@ public class MergeSort {
             }
         }
     }
+
+
+    public static <E extends Comparable<? super E>> void mergeDownToUp(E[] arr) {
+        E[] temp = Arrays.copyOf(arr, arr.length);
+        int n = arr.length;
+
+        // 遍历合并的区间的长度
+        for (int sz = 1; sz < n; sz += sz) {
+
+            // 遍历合并的两个区间的起始位置i
+            // 合并[i,i+sz-1] 和 [i+sz,i+sz+sz-1]
+            for (int i = 0; i + sz < n; i += sz + sz) {
+
+            }
+
+        }
+    }
+
 
 }
