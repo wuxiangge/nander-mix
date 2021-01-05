@@ -1,5 +1,8 @@
 package com.cedar.algorithm.sort.selection;
 
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * 选择排序算法
  * 原地排序
@@ -34,6 +37,18 @@ public class SelectionSort {
         int temp = data[low];
         data[low] = data[high];
         data[high] = temp;
+    }
+
+
+    public static void main(String[] args) {
+        List<Double> list = Arrays.asList(0.1D, 0.1D, 0.1D, 0.1D, 0.1D);
+        double sum = list.stream().mapToDouble(p -> p).sum();
+        System.out.println(sum);
+
+        List<Double> list2 = Arrays.asList(0.1D, 0.1D, 0.1D, 0.1D, 0.1D, 0.1D, 0.1D);
+        double sum2 = list.stream().mapToDouble(p -> p).sum();
+        System.out.println(sum2);
+
     }
 
 }
