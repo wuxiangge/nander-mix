@@ -1,12 +1,12 @@
-package com.cedar.algorithm.sort.selection;
+package com.cedar.algorithm.sort.selection.v2;
 
 /**
  * @author zhangnan
  * @date 2020-11-15 15:29
  */
-public class SelectionSortV2 {
+public class SelectionSort {
 
-    private SelectionSortV2() {
+    private SelectionSort() {
     }
 
     /**

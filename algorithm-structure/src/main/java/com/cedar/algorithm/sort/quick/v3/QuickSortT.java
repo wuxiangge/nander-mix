@@ -1,4 +1,4 @@
-package com.cedar.algorithm.sort.quick;
+package com.cedar.algorithm.sort.quick.v3;
 
 import java.util.Random;
 

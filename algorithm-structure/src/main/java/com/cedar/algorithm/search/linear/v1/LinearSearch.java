@@ -1,4 +1,4 @@
-package com.cedar.algorithm.search.linear;
+package com.cedar.algorithm.search.linear.v1;
 
 /**
  * 线性查找法

@@ -1,4 +1,4 @@
-package com.cedar.algorithm.sort.insertion;
+package com.cedar.algorithm.sort.insertion.v1;
 
 /**
  * @author zhangnan

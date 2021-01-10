@@ -1,4 +1,4 @@
-package com.cedar.algorithm.sort.selection;
+package com.cedar.algorithm.sort.selection.v1;
 
 import java.util.Arrays;
 import java.util.List;

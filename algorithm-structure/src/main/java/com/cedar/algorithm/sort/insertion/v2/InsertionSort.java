@@ -1,12 +1,12 @@
-package com.cedar.algorithm.sort.insertion;
+package com.cedar.algorithm.sort.insertion.v2;
 
 /**
  * @author zhangnan
  * @date 2020-11-15 16:19
  */
-public class InsertionSortV2 {
+public class InsertionSort {
 
-    private InsertionSortV2() {
+    private InsertionSort() {
     }
 
     /**

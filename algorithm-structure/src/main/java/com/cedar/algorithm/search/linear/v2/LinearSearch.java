@@ -1,4 +1,4 @@
-package com.cedar.algorithm.search.linear;
+package com.cedar.algorithm.search.linear.v2;
 
 /**
  * 使用泛型
@@ -7,9 +7,9 @@ package com.cedar.algorithm.search.linear;
  * @author zhangnan
  * @date 2020-11-15 14:36
  */
-public class LinearSearchV2<E> {
+public class LinearSearch {
 
-    private LinearSearchV2() {
+    private LinearSearch() {
     }
 
     public static <E> int search(E[] data, E target) {
@@ -24,7 +24,7 @@ public class LinearSearchV2<E> {
 
     public static void main(String[] args) {
         Integer[] data = {12, 34, 56, 78, 77, 44};
-        int result = LinearSearchV2.<Integer>search(data, 33);
+        int result = LinearSearch.<Integer>search(data, 33);
         System.out.println(result);
     }
 
