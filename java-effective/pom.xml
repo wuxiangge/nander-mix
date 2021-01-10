@@ -2,21 +2,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>cedar-mix</artifactId>
+        <groupId>com.cedar</groupId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.cedar</groupId>
-    <artifactId>cedar-mix</artifactId>
-    <packaging>pom</packaging>
-    <version>1.0.0-SNAPSHOT</version>
-    <modules>
-        <module>algorithm-structure</module>
-        <module>leecode</module>
-        <module>design-pattern</module>
-        <module>java-core</module>
-        <module>multi-thread</module>
-        <module>java-think</module>
-        <module>java-effective</module>
-    </modules>
+    <artifactId>java-effective</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
