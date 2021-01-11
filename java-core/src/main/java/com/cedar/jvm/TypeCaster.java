@@ -1,7 +1,6 @@
-package com.cedar.core.chaptor3;
+package com.cedar.jvm;
 
 import java.io.Console;
-import java.util.Locale;
 
 public class TypeCaster {
 
