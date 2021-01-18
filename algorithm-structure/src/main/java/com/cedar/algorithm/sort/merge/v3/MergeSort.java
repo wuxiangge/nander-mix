@@ -1,4 +1,6 @@
-package com.cedar.algorithm.sort.merge.v1;
+package com.cedar.algorithm.sort.merge.v3;
+
+import com.cedar.algorithm.sort.insertion.v2.InsertionSort;
 
 import java.util.Arrays;
 
@@ -29,7 +31,10 @@ public class MergeSort {
      * @param <E>
      */
     private static <E extends Comparable<? super E>> void mergeSortUpToDown(E[] arr, int l, int r) {
-        if (l > r) {
+
+        // 使用插入排序算法优化
+        if (r - l <= 15) {
+            InsertionSort.sort(arr, l, r);
             return;
         }
 
@@ -39,8 +44,9 @@ public class MergeSort {
 
         mergeSortUpToDown(arr, mid + 1, r);
 
-        merge(arr, l, mid, r);
-
+        if (arr[mid].compareTo(arr[mid + 1]) > 0) {
+            merge(arr, l, mid, r);
+        }
 
     }
 

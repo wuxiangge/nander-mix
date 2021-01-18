@@ -8,21 +8,22 @@ import java.util.Random;
 public class QuickSortD {
 
     public static <E extends Comparable<? super E>> void sort(E[] arr) {
-        sort(arr, 0, arr.length - 1);
+        Random random = new Random();
+        sort(arr, 0, arr.length - 1, random);
     }
 
-    private static <E extends Comparable<? super E>> void sort(E[] arr, int l, int r) {
+    private static <E extends Comparable<? super E>> void sort(E[] arr, int l, int r, Random random) {
         if (l >= r) {
             return;
         }
-        int p = partition(arr, l, r);
-        sort(arr, l, p - 1);
-        sort(arr, p + 1, l);
+        int p = partition(arr, l, r, random);
+        sort(arr, l, p - 1, random);
+        sort(arr, p + 1, l, random);
     }
 
     // 双路快速排序
-    private static <E extends Comparable<? super E>> int partition(E[] arr, int l, int r) {
-        int p = l + (new Random()).nextInt(r - l + 1);
+    private static <E extends Comparable<? super E>> int partition(E[] arr, int l, int r, Random random) {
+        int p = l + random.nextInt(r - l + 1);
         swap(arr, l, p);
 
         // arr[l+1...i-1]<=v;arr[j+1...r]>=v

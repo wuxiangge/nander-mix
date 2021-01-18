@@ -1,4 +1,4 @@
-package com.cedar.algorithm.sort.merge.v1;
+package com.cedar.algorithm.sort.merge.v2;
 
 import java.util.Arrays;
 
@@ -39,8 +39,10 @@ public class MergeSort {
 
         mergeSortUpToDown(arr, mid + 1, r);
 
-        merge(arr, l, mid, r);
-
+        //  优化
+        if (arr[mid].compareTo(arr[mid + 1]) > 0) {
+            merge(arr, l, mid, r);
+        }
 
     }
 

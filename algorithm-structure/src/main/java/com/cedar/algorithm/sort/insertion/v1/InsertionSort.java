@@ -15,18 +15,6 @@ public class InsertionSort {
      * @param array
      */
     public static void sort(int[] array) {
-        for (int i = 1; i < array.length; i++) {
-            for (int j = i; j > 0; j--) {
-                if (array[j - 1] > array[j]) {
-                    swap(array, j - 1, j);
-                } else {
-                    break;
-                }
-            }
-        }
-    }
-
-    public static void sortV2(int[] array) {
         for (int i = 0; i < array.length; i++) {
             for (int j = i; j - 1 >= 0; j--) {
                 if (array[j - 1] > array[j]) {
