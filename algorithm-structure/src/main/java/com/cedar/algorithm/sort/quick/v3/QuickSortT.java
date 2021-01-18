@@ -35,7 +35,6 @@ public class QuickSortT {
             } else {
                 // arr[i] == arr[l]
                 i++;
-                
             }
         }
 
