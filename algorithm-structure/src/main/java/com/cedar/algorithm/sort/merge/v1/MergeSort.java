@@ -20,30 +20,32 @@ public class MergeSort {
         mergeSortUpToDown(arr, 0, arr.length - 1);
     }
 
+    /**
+     * 自顶向下归并排序
+     *
+     * @param arr
+     * @param l
+     * @param r
+     * @param <E>
+     */
     private static <E extends Comparable<? super E>> void mergeSortUpToDown(E[] arr, int l, int r) {
         if (l > r) {
             return;
         }
 
-//        if (r - l <= 15) {
-//            // 不进行归并排序 转而使用插入排序算法
-//            InsertionSortV2.sort2(arr,l,r);
-//            return;
-//        }
-
-
         int mid = l + (r - l) / 2;
+
         mergeSortUpToDown(arr, l, mid);
+
         mergeSortUpToDown(arr, mid + 1, r);
-        if (arr[mid].compareTo(arr[mid + 1]) > 0) {
-            merge(arr, l, mid, r);
-        }
+
+        merge(arr, l, mid, r);
+
+
     }
 
     /**
      * 合并两个有序区间 arr[l mid] arr[mid+1,r]
-     * 归并排序算法
-     * 插入排序算法
      *
      * @param arr
      * @param l
@@ -70,23 +72,5 @@ public class MergeSort {
             }
         }
     }
-
-
-    public static <E extends Comparable<? super E>> void mergeDownToUp(E[] arr) {
-        E[] temp = Arrays.copyOf(arr, arr.length);
-        int n = arr.length;
-
-        // 遍历合并的区间的长度
-        for (int sz = 1; sz < n; sz += sz) {
-
-            // 遍历合并的两个区间的起始位置i
-            // 合并[i,i+sz-1] 和 [i+sz,i+sz+sz-1]
-            for (int i = 0; i + sz < n; i += sz + sz) {
-
-            }
-
-        }
-    }
-
 
 }

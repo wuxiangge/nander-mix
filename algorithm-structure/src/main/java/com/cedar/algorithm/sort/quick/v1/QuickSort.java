@@ -8,23 +8,25 @@ public class QuickSort {
     }
 
     public static <E extends Comparable<? super E>> void sort(E[] arr) {
-        quickSort(arr, 0, arr.length - 1);
+        Random random = new Random();
+        quickSort(arr, 0, arr.length - 1, random);
 
     }
 
-    private static <E extends Comparable<? super E>> void quickSort(E[] arr, int l, int r) {
+    private static <E extends Comparable<? super E>> void quickSort(E[] arr, int l, int r, Random random) {
         if (l >= r) {
             return;
         }
-        int p = partition(arr, l, r);
-        quickSort(arr, l, p - 1);
-        quickSort(arr, p + 1, r);
+
+        int p = partition(arr, l, r, random);
+        quickSort(arr, l, p - 1, random);
+        quickSort(arr, p + 1, r, random);
     }
 
-    private static <E extends Comparable<? super E>> int partition(E[] arr, int l, int r) {
+    private static <E extends Comparable<? super E>> int partition(E[] arr, int l, int r, Random random) {
         // 生成[l...r]之间的随机值
 
-        int p = l + (new Random()).nextInt(r - l + 1);
+        int p = l + random.nextInt(r - l + 1);
         swap(arr, l, p);
 
         // arr[l+1...j] < v  arr[j+1...i] >v

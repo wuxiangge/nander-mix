@@ -15,7 +15,7 @@ public class SelectionSort {
      *
      * @param data
      */
-    public static <E extends Comparable<E>> void sort(E[] data) {
+    public static <E extends Comparable<? super E>> void sort(E[] data) {
         for (int i = 0; i < data.length; i++) {
             int minIndex = i;
             for (int j = i; j < data.length; j++) {
