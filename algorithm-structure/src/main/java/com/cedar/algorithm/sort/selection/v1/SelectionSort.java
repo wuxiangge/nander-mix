@@ -33,6 +33,20 @@ public class SelectionSort {
         }
     }
 
+
+    public static void selectSort(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            int min = i;
+
+            for (int j = i; j < array.length; j++) {
+                if (array[min] > array[j]) {
+                    min = j;
+                }
+            }
+            swap(array, i, min);
+        }
+    }
+
     private static void swap(int[] data, int low, int high) {
         int temp = data[low];
         data[low] = data[high];

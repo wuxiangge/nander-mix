@@ -27,6 +27,20 @@ public class SelectionSort {
         }
     }
 
+
+    public static <E extends Comparable<? super E>> void selectSort(E[] array) {
+        for (int i = 0; i < array.length; i++) {
+            int min = i;
+
+            for (int j = i; j < array.length; j++) {
+                if (array[min].compareTo(array[j]) > 0) {
+                    min = j;
+                }
+            }
+            swap(array, i, min);
+        }
+    }
+
     private static <E> void swap(E[] data, int low, int high) {
         E temp = data[low];
         data[low] = data[high];

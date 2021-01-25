@@ -27,6 +27,20 @@ public class InsertionSort {
     }
 
 
+    // 插入排序算法原理 [0,i) 已经排序
+    public static void insertSort(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            for (int j = i; j - 1 >= 0; j--) {
+                if (array[j - 1] > array[j]) {
+                    swap(array, j - 1, j);
+                } else {
+                    break;
+                }
+            }
+        }
+    }
+
+
     private static void swap(int[] data, int low, int high) {
         int temp = data[low];
         data[low] = data[high];

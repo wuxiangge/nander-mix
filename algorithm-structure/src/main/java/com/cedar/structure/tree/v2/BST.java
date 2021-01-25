@@ -43,7 +43,7 @@ public class BST<E extends Comparable<? super E>> {
 
 
     public boolean isEmpty() {
-        return size == 0;
+        return size() == 0;
     }
 
 
@@ -253,7 +253,7 @@ public class BST<E extends Comparable<? super E>> {
             return rightNode;
         }
 
-        node.right = removeMin(node.right);
+        node.right = removeMax(node.right);
         return node;
     }
 

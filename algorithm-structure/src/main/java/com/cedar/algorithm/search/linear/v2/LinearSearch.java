@@ -24,7 +24,7 @@ public class LinearSearch {
 
     public static void main(String[] args) {
         Integer[] data = {12, 34, 56, 78, 77, 44};
-        int result = LinearSearch.<Integer>search(data, 33);
+        int result = LinearSearch.search(data, 33);
         System.out.println(result);
     }
 
