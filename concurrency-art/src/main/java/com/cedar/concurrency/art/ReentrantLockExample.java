@@ -13,6 +13,7 @@ public class ReentrantLockExample {
 
     ReentrantLock lock = new ReentrantLock();
 
+
     public void write() {
         lock.lock();
 

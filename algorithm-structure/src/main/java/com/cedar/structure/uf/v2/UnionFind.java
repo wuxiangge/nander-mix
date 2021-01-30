@@ -25,12 +25,19 @@ public class UnionFind implements UF {
 
     @Override
     public boolean isConnected(int p, int q) {
-        return false;
+        return find(p) == find(q);
     }
 
     @Override
     public void unionElements(int p, int q) {
+        int pRoot = find(p);
+        int qRoot = find(q);
 
+        if (pRoot == qRoot) {
+            return;
+        }
+
+        parent[pRoot] = qRoot;
     }
 
 
