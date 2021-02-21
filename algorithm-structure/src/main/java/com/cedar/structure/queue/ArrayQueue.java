@@ -39,7 +39,7 @@ public class ArrayQueue<E> implements Queue<E> {
      */
     @Override
     public E dequeue() {
-        return array.removeFirst();
+        return array.removeLast();
     }
 
     /**
