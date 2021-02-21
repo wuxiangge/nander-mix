@@ -15,7 +15,7 @@ public class InsertionSort {
      * @param array
      */
     public static <E extends Comparable<? super E>> void sort(E[] array) {
-        for (int i = 0; i < array.length; i++) {
+        for (int i = 1; i < array.length; i++) {
             for (int j = i; j >= 1 && array[j].compareTo(array[j - 1]) < 0; j--) {
                 swap(array, j, j - 1);
             }
@@ -33,7 +33,7 @@ public class InsertionSort {
 
 
     public static <E extends Comparable<? super E>> void insertSort(E[] array) {
-        for (int i = 0; i < array.length; i++) {
+        for (int i = 1; i < array.length; i++) {
             for (int j = i; j - 1 >= 0 && array[j].compareTo(array[j - 1]) < 0; j--) {
                 swap(array, j - 1, j);
             }
