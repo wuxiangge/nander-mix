@@ -334,7 +334,7 @@ public class Sorts {
         swap(arr, l, p);
 
 
-        // arr[l+1...lt]<v arr[lt+1...i-1]===v arr[gt...r]>v
+        // arr[l+1...lt]<v arr[lt+1...i-1]==v arr[gt...r]>v
 
         int i = l + 1;
         int lt = l;
