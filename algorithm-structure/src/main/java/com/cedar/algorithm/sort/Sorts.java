@@ -1,6 +1,7 @@
 package com.cedar.algorithm.sort;
 
 import java.util.Arrays;
+import java.util.Random;
 
 /**
  * @author zhangnan
@@ -206,6 +207,7 @@ public class Sorts {
 
     /**
      * 自底向上归并排序算法
+     * todo... 需要深入理解
      *
      * @param arr
      * @param <E>
@@ -224,7 +226,38 @@ public class Sorts {
                 }
             }
         }
+    }
 
+
+    // 基本快速排序算法
+    public static <E extends Comparable<? super E>> void quickSort(E[] arr) {
+        Random random = new Random();
+        int length = arr.length;
+        quickSort(arr, 0, length - 1, random);
+    }
+
+    private static <E> void quickSort(E[] arr, int l, int r, Random random) {
+        if (l >= r) {
+            return;
+        }
+
+        int p = partition(arr, l, r, random);
+        quickSort(arr, l, p, random);
+        quickSort(arr, p + 1, r, random);
+    }
+
+    // 快速排序算法核心
+    private static <E> int partition(E[] arr, int l, int r, Random random) {
+        return 0;
+    }
+
+    // 双路快速排序
+    public static <E extends Comparable<? super E>> void quickSort2Way(E[] arr) {
+
+    }
+
+    // 三路快速排序
+    public static <E extends Comparable<? super E>> void quickSort3Way(E[] arr) {
 
     }
 
