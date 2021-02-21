@@ -236,7 +236,7 @@ public class Sorts {
         quickSort(arr, 0, length - 1, random);
     }
 
-    private static <E> void quickSort(E[] arr, int l, int r, Random random) {
+    private static <E extends Comparable<? super E>> void quickSort(E[] arr, int l, int r, Random random) {
         if (l >= r) {
             return;
         }
@@ -247,8 +247,25 @@ public class Sorts {
     }
 
     // 快速排序算法核心
-    private static <E> int partition(E[] arr, int l, int r, Random random) {
-        return 0;
+    private static <E extends Comparable<? super E>> int partition(E[] arr, int l, int r, Random random) {
+
+        // [0...x) 左闭右开区间
+        int p = l + random.nextInt(r - l + 1);
+        swap(arr, l, p);
+
+        // arr[l] = v;
+        int j = l;
+
+        // arr[l+1...j] < v  arr[j+1...i) >v 现在正在处理i 最终结果 arr[j+1...i]>v
+
+        for (int i = l + 1; i <= r; i++) {
+            if (arr[i].compareTo(arr[l]) < 0) {
+                j++;
+                swap(arr, i, j);
+            }
+        }
+        swap(arr, l, j);
+        return j;
     }
 
     // 双路快速排序
