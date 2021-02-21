@@ -270,11 +270,93 @@ public class Sorts {
 
     // 双路快速排序
     public static <E extends Comparable<? super E>> void quickSort2Way(E[] arr) {
+        int length = arr.length;
+        Random random = new Random();
+        quickSort2Way(arr, 0, length - 1, random);
+    }
 
+    private static <E extends Comparable<? super E>> void quickSort2Way(E[] arr, int l, int r, Random random) {
+        if (l >= r) {
+            return;
+        }
+
+        int p = partition2Way(arr, l, r, random);
+
+        quickSort2Way(arr, l, p, random);
+        quickSort2Way(arr, p + 1, r, random);
+    }
+
+    private static <E extends Comparable<? super E>> int partition2Way(E[] arr, int l, int r, Random random) {
+
+        int p = l + random.nextInt(r - l + 1);
+        swap(arr, l, p);
+
+        int i = l + 1;
+        int j = r;
+
+        // arr[l+1...i-1]<=v;arr[j+1...r]>=v
+
+        while (true) {
+
+            while (i <= j && arr[i].compareTo(arr[l]) < 0) {
+                ++i;
+            }
+
+            while (j >= i && arr[j].compareTo(arr[l]) > 0) {
+                --j;
+            }
+
+            if (i >= j) {
+                break;
+            }
+
+            swap(arr, i, j);
+            i++;
+            j--;
+
+        }
+
+        swap(arr, l, j);
+        return j;
     }
 
     // 三路快速排序
     public static <E extends Comparable<? super E>> void quickSort3Way(E[] arr) {
+        Random rnd = new Random();
+        quickSort3Way(arr, 0, arr.length - 1, rnd);
+    }
+
+    private static <E extends Comparable<? super E>> void quickSort3Way(E[] arr, int l, int r, Random rnd) {
+        if (l >= r) {
+            return;
+        }
+        int p = l + rnd.nextInt(r - l + 1);
+        swap(arr, l, p);
+
+
+        // arr[l+1...lt]<v arr[lt+1...i-1]===v arr[gt...r]>v
+
+        int i = l + 1;
+        int lt = l;
+        int gt = r + 1;
+
+        while (i < gt) {
+            if (arr[i].compareTo(arr[l]) < 0) {
+                lt++;
+                swap(arr, lt, i);
+            } else if (arr[i].compareTo(arr[l]) > 0) {
+                gt--;
+                swap(arr, i, gt);
+            } else {
+                i++;
+            }
+
+        }
+
+        swap(arr, l, lt);
+        // arr[l...lt-1]<v arr[lt...gt-1]===v arr[gt...r]>v
+        quickSort3Way(arr, l, lt - 1, rnd);
+        quickSort3Way(arr, gt, r, rnd);
 
     }
 
