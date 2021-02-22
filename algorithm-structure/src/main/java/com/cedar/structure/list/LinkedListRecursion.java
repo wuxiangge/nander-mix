@@ -2,6 +2,7 @@ package com.cedar.structure.list;
 
 /**
  * 递归处理链表
+ * todo...张楠 复习
  *
  * @param <E>
  */
@@ -57,12 +58,13 @@ public class LinkedListRecursion<E> {
     }
 
 
+    // 递归的宏观语义   在以node为头结点的链表的index位置插入e 并返回node节点
     private Node add(Node node, int index, E e) {
         if (index == 0) {
             return new Node(e, node);
         }
 
-        node.next = add(node, index - 1, e);
+        node.next = add(node.next, index - 1, e);
         return node;
     }
 

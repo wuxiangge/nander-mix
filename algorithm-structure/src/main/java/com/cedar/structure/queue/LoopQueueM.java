@@ -1,7 +1,7 @@
 package com.cedar.structure.queue;
 
 /**
- * 不适用size
+ * 不使用size
  * 浪费一个空间
  *
  * @param <E>

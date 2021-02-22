@@ -16,6 +16,7 @@ package q206;
 //leetcode submit region begin(Prohibit modification and deletion)
 
 /**
+ * todo...张楠
  * Definition for singly-linked list.
  * public class ListNode {
  * int val;
@@ -38,10 +39,13 @@ class Solution {
 
     /**
      * 链表翻转
+     * 宏观语义 翻转一个链表 并返回这个链表的节点
      *
      * @param head
      * @return
      */
+
+
     public ListNode reverseList2(ListNode head) {
         if (head == null || head.next == null) {
             return head;

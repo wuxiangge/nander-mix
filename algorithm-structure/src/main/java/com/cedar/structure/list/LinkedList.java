@@ -62,7 +62,6 @@ public class LinkedList<E> {
 
         prev.next = new Node(e, prev.next);
         size++;
-
     }
 
     public void addLast(E e) {
