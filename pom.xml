@@ -19,6 +19,7 @@
         <module>concurrency-practice</module>
         <module>concurrency-art</module>
         <module>java-jvm</module>
+        <module>atguigu-structure</module>
     </modules>
 
     <properties>
