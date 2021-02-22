@@ -20,6 +20,7 @@
         <module>concurrency-art</module>
         <module>java-jvm</module>
         <module>atguigu-structure</module>
+        <module>atguigu-netty</module>
     </modules>
 
     <properties>
