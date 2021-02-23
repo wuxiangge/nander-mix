@@ -17,6 +17,63 @@ public class Sorts {
 
     }
 
+    // 堆排序算法
+    public static <E extends Comparable<? super E>> void heapSort(E[] arr) {
+
+        if (arr.length <= 1) return;
+
+        for (int i = getParent(arr.length - 1); i >= 0; i--) {
+            siftDown(arr, i, arr.length);
+        }
+
+        for (int i = arr.length - 1; i >= 0; i--) {
+            swap(arr, 0, i);
+            siftDown(arr, 0, i);
+        }
+
+    }
+
+
+    private static <E extends Comparable<? super E>> void siftDown(E[] arr, int index, int n) {
+
+        while (leftChild(index) < n) {
+
+            int j = leftChild(index);
+
+            if (j + 1 < n && arr[j + 1].compareTo(arr[j]) > 0) {
+                j = rightChild(index);
+            }
+
+            // data[j] 是 leftChild rightChild 中的最大值
+
+            if (arr[index].compareTo(arr[j]) > 0) {
+                break;
+            }
+
+            swap(arr, index, j);
+            index = j;
+        }
+
+    }
+
+
+    private static int leftChild(int index) {
+        return 2 * index + 1;
+    }
+
+    private static int rightChild(int index) {
+        return 2 * index + 2;
+    }
+
+
+    private static int getParent(int index) {
+        if (index == 0) {
+            throw new IllegalArgumentException("没有父元素");
+        }
+        return (index - 1) / 2;
+    }
+
+
     // 插入排序算法
     public static <E extends Comparable<? super E>> void insertSort(E[] arr) {
         // 循环不变量 [0...i) 已经排好序 现在准备将 i 放到[0...i)中的合适位置
