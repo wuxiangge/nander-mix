@@ -61,6 +61,16 @@ public class MinHeap<E extends Comparable<? super E>> {
     }
 
 
+    private void siftUp(int k, E[] data) {
+
+        while (k > 0 && data[parent(k)].compareTo(data[k]) > 0) {
+            swap(data, parent(k), k);
+            k = parent(k);
+        }
+
+    }
+
+
     private void swap(E[] data, int l, int r) {
         E temp = data[l];
         data[l] = data[r];
