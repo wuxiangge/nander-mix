@@ -64,7 +64,6 @@ public class MaxHeap<E extends Comparable<? super E>> {
 
     private void siftUp(int k) {
 
-
         while (k > 0 && data.get(parent(k)).compareTo(data.get(k)) < 0) {
             data.swap(k, parent(k));
             k = parent(k);
@@ -96,16 +95,14 @@ public class MaxHeap<E extends Comparable<? super E>> {
 
             if (j + 1 < data.getSize() && data.get(j + 1).compareTo(data.get(j)) > 0) {
                 j = rightChild(k);
-
-                // data[j] 是 leftChild rightChild 中的最大值
-
-                if (data.get(k).compareTo(data.get(j)) > 0) {
-                    break;
-                }
-
-                data.swap(k, j);
-                k = j;
             }
+            // data[j] 是 leftChild rightChild 中的最大值
+            if (data.get(k).compareTo(data.get(j)) > 0) {
+                break;
+            }
+
+            data.swap(k, j);
+            k = j;
 
         }
     }

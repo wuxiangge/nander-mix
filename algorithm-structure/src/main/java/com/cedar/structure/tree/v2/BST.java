@@ -108,11 +108,11 @@ public class BST<E extends Comparable<? super E>> {
         preOrder(node.right);
     }
 
-    // 二分搜索中前序遍历
+    // 二分搜索中序遍历
 
 
     public void inOrder() {
-        preOrder(root);
+        inOrder(root);
     }
 
     private void inOrder(Node node) {
@@ -143,7 +143,7 @@ public class BST<E extends Comparable<? super E>> {
     }
 
 
-    // 二分搜索树非递归操作
+    // 二分搜索树非递归操作 使用栈数据结构
     public void preOrderNR() {
 
         Deque<Node> stack = new LinkedList<>();
@@ -164,6 +164,7 @@ public class BST<E extends Comparable<? super E>> {
     }
 
 
+    // 层序遍历 使用队列
     public void levelOrder() {
         Queue<Node> queue = new LinkedList<>();
 
@@ -201,7 +202,7 @@ public class BST<E extends Comparable<? super E>> {
     }
 
 
-    // 寻找二分搜索树的最小元素
+    // 寻找二分搜索树的最大元素
     public E maximun() {
         if (size == 0) {
             throw new IllegalArgumentException("BST is Empty");
@@ -224,6 +225,7 @@ public class BST<E extends Comparable<? super E>> {
         return ret;
     }
 
+    // 返回删除最小元素后的node节点
     private Node removeMin(Node node) {
 
         if (node.left == null) {
@@ -244,6 +246,7 @@ public class BST<E extends Comparable<? super E>> {
         return ret;
     }
 
+    // 返回删除最小元素后的node节点
     private Node removeMax(Node node) {
 
         if (node.right == null) {
@@ -262,6 +265,8 @@ public class BST<E extends Comparable<? super E>> {
         root = remove(root, e);
     }
 
+
+    //宏观语义 返回删除e元素后的node节点
     private Node remove(Node node, E e) {
 
         if (node == null) {
@@ -297,7 +302,7 @@ public class BST<E extends Comparable<? super E>> {
 
             // 左右子树都不为空
 
-            Node successor = minimun(node.right);
+            Node successor = minimun(node.right); // 查找又子树中最小的元素 前驱后继节点
             successor.right = removeMin(node.right);
 
 

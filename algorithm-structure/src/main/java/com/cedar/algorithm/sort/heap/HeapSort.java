@@ -19,8 +19,11 @@ public class HeapSort {
             maxHeap.add(e);
         }
 
-        for (int i = data.length; i >= 0; i--) {
+//        MaxHeap<E> maxHeap = new MaxHeap<>(data);
+
+        for (int i = data.length - 1; i >= 0; i--) {
             data[i] = maxHeap.extractMax();
         }
+
     }
 }
