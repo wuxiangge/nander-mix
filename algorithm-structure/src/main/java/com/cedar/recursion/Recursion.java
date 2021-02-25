@@ -1,7 +1,5 @@
 package com.cedar.recursion;
 
-import com.sun.image.codec.jpeg.JPEGCodec;
-
 import java.util.Arrays;
 
 public class Recursion {
