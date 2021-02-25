@@ -98,15 +98,27 @@ public class AVLTree<K extends Comparable<K>, V> {
 
         // avl 维护自平衡 左旋 右旋
         if (balanceFactor > 1 && getBalanceFactor(node.left) >= 0) {
-            // 右旋转  RR
+            // 右旋转  LL
             return rightRotate(node);
         }
 
         if (balanceFactor < -1 && getHeight(node.right) <= 0) {
-            // 左旋转 LL
+            // 左旋转 RR
             return leftRotate(node);
         }
 
+        //LR    LR--->LL
+        if (balanceFactor > 1 && getBalanceFactor(node.left) < 0) {
+            node.left = leftRotate(node.left);
+            return rightRotate(node);
+        }
+
+        //RL
+
+        if (balanceFactor < -1 && getBalanceFactor(node.right) > 0) {
+            node.right = rightRotate(node.right);
+            return leftRotate(node);
+        }
 
         return node;
 
@@ -287,10 +299,10 @@ public class AVLTree<K extends Comparable<K>, V> {
         Node retNode;
         if (key.compareTo(node.key) < 0) {
             node.left = remove(node.left, key);
-            return node;
+            retNode = node;
         } else if (key.compareTo(node.key) > 0) {
             node.right = remove(node.right, key);
-            return node;
+            retNode = node;
         } else { // 开始处理 key.compareTo(node.key)=0
             if (node.right == null) {
                 Node leftNode = node.left;
@@ -315,6 +327,42 @@ public class AVLTree<K extends Comparable<K>, V> {
                 retNode = successor;
             }
         }
+
+        if (retNode == null) {
+            return null;
+        }
+        // 重新计算节点高度
+        retNode.height = Math.max(getHeight(retNode.left), getHeight(retNode.right)) + 1;
+
+
+        int balanceFactor = getBalanceFactor(retNode);
+        if (Math.abs(balanceFactor) > 1) {
+            System.out.println("-------->unbalanced : " + balanceFactor);
+        }
+
+        // avl 维护自平衡 左旋 右旋
+        if (balanceFactor > 1 && getBalanceFactor(retNode.left) >= 0) {
+            // 右旋转  LL
+            return rightRotate(retNode);
+        }
+
+        if (balanceFactor < -1 && getHeight(retNode.right) <= 0) {
+            // 左旋转 RR
+            return leftRotate(retNode);
+        }
+
+        //LR    LR--->LL
+        if (balanceFactor > 1 && getBalanceFactor(retNode.left) < 0) {
+            retNode.left = leftRotate(retNode.left);
+            return rightRotate(retNode);
+        }
+
+        //RL
+        if (balanceFactor < -1 && getBalanceFactor(retNode.right) > 0) {
+            retNode.right = rightRotate(retNode.right);
+            return leftRotate(retNode);
+        }
+
         return retNode;
     }
 
