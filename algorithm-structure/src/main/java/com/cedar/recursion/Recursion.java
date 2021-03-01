@@ -141,15 +141,102 @@ public class Recursion {
         }
     }
 
-    public void traceBack(int i,int j ,int[][] s) {
-        if (i==j) {
+    public void traceBack(int i, int j, int[][] s) {
+        if (i == j) {
             return;
         }
 
-        traceBack(i,s[i][j],s);
-        traceBack(s[i][j]+1,j,s);
+        traceBack(i, s[i][j], s);
+        traceBack(s[i][j] + 1, j, s);
 
     }
+
+
+    /**
+     * 动态规划计算最长公共子序列
+     */
+    public void LCSLength(int m, int n, char[] x, char[] y, int[][] c, int[][] b) {
+        int i, j;
+
+        for (i = 1; i <= m; i++) {
+            c[i][0] = 0;
+        }
+
+        for (i = 1; i <= n; i++) {
+            c[0][i] = 0;
+        }
+
+        for (i = 1; i <= m; i++) {
+            for (j = i; j <= n; j++) {
+                if (x[i] == y[j]) {
+                    c[i][j] = c[i - 1][j - 1] + 1;
+                    b[i][j] = 1;
+                } else if (c[i - 1][j] >= c[i][j - 1]) {
+                    c[i][j] = c[i - 1][j];
+                    b[i][j] = 2;
+                } else {
+                    c[i][j] = c[i][j - 1];
+                    b[i][j] = 3;
+                }
+            }
+        }
+    }
+
+
+    /**
+     * 最大字段和 分治法
+     *
+     * @param a
+     * @param left
+     * @param right
+     * @return
+     */
+    public int maxSubSum(int[] a, int left, int right) {
+
+
+        int sum = 0;
+        if (left == right) {
+            return Math.max(a[left], 0);
+        }
+
+        int middle = left + (right - left) / 2;
+
+        int leftSum = maxSubSum(a, left, middle);
+        int rightSum = maxSubSum(a, middle + 1, right);
+
+
+        int s1 = 0;
+        int lefts = 0;
+
+        for (int i = middle; i >= left; i--) {
+            lefts += a[i];
+            if (lefts > s1) {
+                s1 = lefts;
+            }
+        }
+        int s2 = 0;
+        int rights = 0;
+
+        for (int i = middle + 1; i <= right; i++) {
+            rights += a[i];
+            if (rights > s2) {
+                s2 = rights;
+            }
+        }
+        sum = s1 + s2;
+        if (sum < leftSum) {
+            sum = leftSum;
+        }
+        if (sum < rightSum) {
+            sum = rightSum;
+        }
+        return sum;
+    }
+
+
+
+
+
 
 
 }
