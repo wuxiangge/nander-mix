@@ -234,9 +234,78 @@ public class Recursion {
     }
 
 
+    /**
+     * 简单字串搜搜算法
+     *
+     * @param t
+     * @param p
+     * @return
+     */
+    int naive(String t, String p) {
+        int n = t.length();
+        int m = p.length();
+
+        int i = 0;
+        while (i < n - m) {
+            int j = 0;
+
+            while (j < m && t.charAt(i + j) == p.charAt(j)) {
+                j++;
+            }
+            if (j == m) {
+                return i;
+            }
+            i++;
+        }
+        return -1;
+    }
 
 
+    /**
+     * 寻找最大前缀串使其也是一个后缀
+     * next(q) = max{k|p[0...k] =|p[0...q]}
+     *
+     * @param p
+     * @param next
+     */
+    private void build(String p, int[] next) {
+        int m = p.length();
+        next[0] = -1;
+        int j = -1;
 
+        for (int i = 1; i < m - 1; i++) {
+            while (j > -1 && p.charAt(j + 1) != p.charAt(i)) {
+                j = next[j];
+            }
+
+            if (p.charAt(j + 1) == p.charAt(i)) {
+                j++;
+            }
+            next[i] = j;
+        }
+    }
+
+
+    int kmp(String t, String p) {
+        int n = t.length();
+        int m = p.length();
+        int[] next = new int[m];
+        build(p, next);
+
+        int j = -1;
+        for (int i = 0; i < n; i++) {
+            while (j > -1 && p.charAt(j + 1) != t.charAt(i)) {
+                j = next[j];
+            }
+            if (p.charAt(j + 1) == t.charAt(i)) {
+                j++;
+            }
+            if (j == m - 1) {
+                return i - m + 1;
+            }
+        }
+        return -1;
+    }
 
 
 }
