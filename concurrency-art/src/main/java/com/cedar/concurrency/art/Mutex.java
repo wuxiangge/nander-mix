@@ -1,5 +1,7 @@
 package com.cedar.concurrency.art;
 
+import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.AbstractQueuedSynchronizer;
 import java.util.concurrent.locks.Condition;
@@ -9,18 +11,23 @@ import java.util.concurrent.locks.Lock;
  * @author zhangnan
  * @date 2021/1/25 9:47
  */
-public class Mutex implements Lock {
+public class Mutex implements Lock, java.io.Serializable {
 
-
+    // Our internal helper class
     private static final class Sync extends AbstractQueuedSynchronizer {
+
+        // Our internal helper class
         @Override
+        // Reports whether in locked state
         protected boolean isHeldExclusively() {
             return getState() == 1;
         }
 
 
         @Override
-        protected boolean tryAcquire(int arg) {
+        // Acquires the lock if state is zero
+        public boolean tryAcquire(int acquires) {
+            assert acquires == 1; // Otherwise unused
             if (compareAndSetState(0, 1)) {
                 setExclusiveOwnerThread(Thread.currentThread());
                 return true;
@@ -38,6 +45,13 @@ public class Mutex implements Lock {
             return true;
         }
 
+        // Deserializes properly
+        private void readObject(ObjectInputStream s)
+                throws IOException, ClassNotFoundException {
+            s.defaultReadObject();
+            setState(0); // reset to unlocked state
+        }
+
         Condition newCondition() {
             return new ConditionObject();
         }
@@ -46,6 +60,7 @@ public class Mutex implements Lock {
 
 
     private final Sync sync = new Sync();
+
 
     @Override
     public void lock() {
