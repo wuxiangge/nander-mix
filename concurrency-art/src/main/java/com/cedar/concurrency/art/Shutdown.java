@@ -28,6 +28,7 @@ public class Shutdown {
     }
 
     private static class Runner implements Runnable {
+
         private long i;
 
         private volatile boolean on = true;
@@ -44,5 +45,6 @@ public class Shutdown {
         public void cancel() {
             on = false;
         }
+
     }
 }
