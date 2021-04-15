@@ -1,4 +1,4 @@
-package com.cedar.jvm.processor;
+package com.cedar.io.processor;
 
 import javax.annotation.processing.AbstractProcessor;
 import javax.annotation.processing.RoundEnvironment;
