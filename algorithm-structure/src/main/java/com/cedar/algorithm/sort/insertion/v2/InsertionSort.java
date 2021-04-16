@@ -89,7 +89,7 @@ public class InsertionSort {
      * @param <E>
      */
     public static <E extends Comparable<? super E>> void sort(E[] array, int l, int r) {
-        for (int i = l; i < r; i++) {
+        for (int i = l; i <= r; i++) {
             // 待插入的数据
             E t = array[i];
             // 应该插入的位置

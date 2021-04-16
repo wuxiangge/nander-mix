@@ -29,7 +29,7 @@ public class QuickSort {
         int p = l + random.nextInt(r - l + 1);
         swap(arr, l, p);
 
-        // arr[l+1...j] < v  arr[j+1...i] >v
+        // data[l+1...j] < v  data[j+1...i] >v
         int j = l;
         for (int i = l + 1; i < r; i++) {
             if (arr[i].compareTo(arr[l]) < 0) {
