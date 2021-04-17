@@ -10,7 +10,7 @@ public class InsertionSort {
     }
 
     /**
-     * array[0...i] 已经排序
+     * array[0...i) 已经排序
      *
      * @param array
      */
