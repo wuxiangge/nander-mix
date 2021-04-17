@@ -150,7 +150,7 @@ public class Sort {
 
         // data[l+1...j] < v  data[j+1...i] >v
         int j = l;
-        for (int i = l + 1; i < r; i++) {
+        for (int i = l + 1; i <= r; i++) {
             if (data[i].compareTo(data[l]) < 0) {
                 j++;
                 swap(data, i, j);
