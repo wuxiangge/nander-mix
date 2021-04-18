@@ -19,7 +19,7 @@ public class LoopQueue<E> implements Queue<E> {
     private int front, tail;
 
     /**
-     * 可以使用 front 和 tail 字段完成 tail 计算
+     * 可以使用 front 和 tail 字段完成 size 计算
      */
     private int size;
 

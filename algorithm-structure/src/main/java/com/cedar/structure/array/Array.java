@@ -130,7 +130,6 @@ public class Array<E> {
     public void add(int index, E e) {
         if (size >= data.length) {
             resize(2 * data.length);
-
         }
         if (index < 0 || index > size) {
             throw new IllegalArgumentException("参数异常");

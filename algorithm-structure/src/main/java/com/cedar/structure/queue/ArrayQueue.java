@@ -29,7 +29,7 @@ public class ArrayQueue<E> implements Queue<E> {
      */
     @Override
     public void enqueue(E e) {
-        array.addFirst(e);
+        array.addLast(e);
     }
 
     /**
@@ -39,7 +39,7 @@ public class ArrayQueue<E> implements Queue<E> {
      */
     @Override
     public E dequeue() {
-        return array.removeLast();
+        return array.removeFirst();
     }
 
     /**

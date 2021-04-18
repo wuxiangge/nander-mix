@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.stream.IntStream;
 
 /**
+ * 二叉查找树
  * @author zhangnan
  * @date 2021/2/25 10:44
  */
