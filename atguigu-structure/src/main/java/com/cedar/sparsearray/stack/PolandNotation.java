@@ -40,25 +40,26 @@ public class PolandNotation {
 
     // 中缀转后缀
     private List<String> parseInfixToSuffix(List<String> infixExpressionList) {
-
+        return null;
     }
 
 
     // 中缀表达式转List
     private List<String> parseInfixToList(String infixExpress) {
-
+        return null;
     }
 
 
     // 外部调用
     public int calculate(String expression) {
 
-
+        return 0;
     }
 
 
     // 内部调用
     private int calculate(List<String> suffixExpressionList) {
+        return 0;
 
     }
 
