@@ -53,6 +53,15 @@ class Solution {
         }
         return r;
     }
+
+    // x^2=a
+    public int mysqrt1(int a) {
+        int x = a;
+        while (x * x > a) {
+            x = (x + a / x) / 2;
+        }
+        return x;
+    }
 }
 //leetcode submit region end(Prohibit modification and deletion)
 
