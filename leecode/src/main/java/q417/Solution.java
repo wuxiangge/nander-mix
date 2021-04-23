@@ -19,8 +19,10 @@ public class Solution {
         int m = matrix.length;
         int n = matrix[0].length;
 
+        // 大西洋
         boolean[][] can_reach_a = new boolean[m][n];
 
+        // 太平洋
         boolean[][] can_reach_p = new boolean[m][n];
 
 

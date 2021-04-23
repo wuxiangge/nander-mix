@@ -1,4 +1,4 @@
-package q965;
+package q695;
 //给定一个包含了一些 0 和 1 的非空二维数组 grid 。
 //
 // 一个 岛屿 是由一些相邻的 1 (代表土地) 构成的组合，这里的「相邻」要求两个 1 必须在水平或者竖直方向上相邻。你可以假设 grid 的四个边缘都被
@@ -39,17 +39,28 @@ package q965;
 class Solution {
     public int maxAreaOfIsland(int[][] grid) {
         int ans = 0;
-
         for (int i = 0; i != grid.length; i++) {
             for (int j = 0; j != grid[0].length; j++) {
                 ans = Math.max(ans, dfsArea(grid, i, j));
             }
         }
-
         return ans;
     }
 
 
+    /**
+     * depth first search
+     * 深度优先搜索
+     * 遍历加递归
+     * <p>
+     * 两种递归方式
+     * 直接递归 然后判断
+     *
+     * @param grid
+     * @param cur_i
+     * @param cur_j
+     * @return
+     */
     public int dfsArea(int[][] grid, int cur_i, int cur_j) {
         if (cur_i < 0 || cur_j < 0 || cur_i == grid.length || cur_j == grid[0].length || grid[cur_i][cur_j] != 1) {
             return 0;
@@ -65,7 +76,6 @@ class Solution {
         for (int index = 0; index != 4; index++) {
             int next_i = cur_i + di[index];
             int next_j = cur_j + dj[index];
-
             ans += dfsArea(grid, next_i, next_j);
         }
         return ans;
