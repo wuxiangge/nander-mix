@@ -59,7 +59,6 @@ public class LinkedList<E> {
         for (int i = 0; i < index; i++) {
             prev = prev.next;
         }
-
         prev.next = new Node(e, prev.next);
         size++;
     }
@@ -73,7 +72,6 @@ public class LinkedList<E> {
         if (index < 0 || index >= size) {
             throw new IllegalArgumentException("get failed Illegal index.");
         }
-
         Node cur = dummyHead.next;
         for (int i = 0; i < index; i++) {
             cur = cur.next;
@@ -101,7 +99,6 @@ public class LinkedList<E> {
 
     public boolean contains(E e) {
         Node cur = dummyHead.next;
-
         while (cur != null) {
             if (cur.e.equals(e)) {
                 return true;
@@ -116,12 +113,10 @@ public class LinkedList<E> {
         if (index < 0 || index >= size) {
             throw new IllegalArgumentException("remove failed Illegal index.");
         }
-
         Node prev = this.dummyHead;
         for (int i = 0; i < index; i++) {
             prev = prev.next;
         }
-
         Node delNode = prev.next;
         prev.next = delNode.next;
         delNode.next = null;
@@ -146,7 +141,6 @@ public class LinkedList<E> {
             }
             prev = prev.next;
         }
-
         if (prev.next != null) {
             Node delNode = prev.next;
             prev.next = delNode.next;
@@ -162,7 +156,6 @@ public class LinkedList<E> {
 //            res.append(cur+"-->");
 //            cur = cur.next;
 //        }
-
         for (Node cur = dummyHead.next; cur != null; cur = cur.next) {
             res.append(cur + "-->");
         }
