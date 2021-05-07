@@ -1,7 +1,22 @@
 package com.cedar.structure.redblack;
 
+/**
+ * 红黑树的五个性质
+ * 1.每个结点要么是红的要么是黑的。
+ * <p>
+ * 2.根结点是黑的。
+ * <p>
+ * 3.每个叶结点（叶结点即指树尾端NIL指针或NULL结点）都是黑的。
+ * <p>
+ * 4.如果一个结点是红的，那么它的两个儿子都是黑的。
+ * <p>
+ * 5.对于任意结点而言，其到叶结点树尾端NIL指针的每条路径都包含相同数目的黑结点。
+ * *
+ *
+ * @param <K>
+ * @param <V>
+ */
 public class RBTree<K extends Comparable<K>, V> {
-
 
     private static final boolean RED = true;
 
@@ -17,7 +32,6 @@ public class RBTree<K extends Comparable<K>, V> {
 
         public boolean color;
 
-
         public Node(K key, V value, Node left, Node right, boolean color) {
             this.key = key;
             this.value = value;
@@ -29,14 +43,11 @@ public class RBTree<K extends Comparable<K>, V> {
         public Node(K key, V value) {
             this(key, value, null, null, RED);
         }
-
     }
-
 
     private Node root;
 
     private int size;
-
 
     public RBTree() {
         root = null;
