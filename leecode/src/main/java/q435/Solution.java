@@ -53,12 +53,13 @@ class Solution {
         //   [1,3]
         // ]  int[4][2]
 
-        if (intervals.length == 0 || intervals.length == 1) {
+        if (intervals.length <= 1) {
             return 0;
         }
 
         // 以数组的后面的字段进行排序
         Arrays.sort(intervals, Comparator.comparingInt(o -> o[1]));
+
 
         int length = intervals.length;
 
