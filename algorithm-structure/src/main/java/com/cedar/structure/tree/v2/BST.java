@@ -25,22 +25,18 @@ public class BST<E extends Comparable<? super E>> {
         }
     }
 
-
     private Node root;
 
     private int size;
-
 
     public BST() {
         this.root = null;
         this.size = 0;
     }
 
-
     public int size() {
         return size;
     }
-
 
     public boolean isEmpty() {
         return size() == 0;
@@ -69,17 +65,14 @@ public class BST<E extends Comparable<? super E>> {
         return node;
     }
 
-
     public boolean contains(E e) {
         return contains(root, e);
     }
-
 
     private boolean contains(Node node, E e) {
         if (node == null) {
             return false;
         }
-
 
         if (e.compareTo(node.e) == 0) {
             return true;
@@ -92,8 +85,6 @@ public class BST<E extends Comparable<? super E>> {
 
 
     // 二分搜索树前序遍历
-
-
     public void preOrder() {
         preOrder(root);
     }
@@ -109,8 +100,6 @@ public class BST<E extends Comparable<? super E>> {
     }
 
     // 二分搜索中序遍历
-
-
     public void inOrder() {
         inOrder(root);
     }
@@ -126,8 +115,7 @@ public class BST<E extends Comparable<? super E>> {
     }
 
 
-    // 二分搜索后前序遍历
-
+    // 二分搜索树后序遍历
     public void postOrder() {
         preOrder(root);
     }
@@ -144,16 +132,13 @@ public class BST<E extends Comparable<? super E>> {
 
 
     // 二分搜索树非递归操作 使用栈数据结构
+    // 使用栈前序遍历 栈和递归的等价性
     public void preOrderNR() {
-
         Deque<Node> stack = new LinkedList<>();
-
         stack.push(root);
-
         while (!stack.isEmpty()) {
             Node cur = stack.pop();
             System.out.println(cur.e);
-
             if (cur.right != null) {
                 stack.push(cur.right);
             }
@@ -167,14 +152,10 @@ public class BST<E extends Comparable<? super E>> {
     // 层序遍历 使用队列
     public void levelOrder() {
         Queue<Node> queue = new LinkedList<>();
-
         queue.add(root);
-
         while (!queue.isEmpty()) {
-
             Node cur = queue.remove();
             System.out.println(cur.e);
-
             if (cur.left != null) {
                 queue.add(cur.left);
             }
@@ -227,14 +208,12 @@ public class BST<E extends Comparable<? super E>> {
 
     // 返回删除最小元素后的node节点
     private Node removeMin(Node node) {
-
         if (node.left == null) {
             Node rightNode = node.right;
             node.right = null;
             size--;
             return rightNode;
         }
-
         node.left = removeMin(node.left);
         return node;
     }
@@ -248,51 +227,39 @@ public class BST<E extends Comparable<? super E>> {
 
     // 返回删除最小元素后的node节点
     private Node removeMax(Node node) {
-
         if (node.right == null) {
             Node rightNode = node.left;
             node.left = null;
             size--;
             return rightNode;
         }
-
         node.right = removeMax(node.right);
         return node;
     }
-
 
     public void remove(E e) {
         root = remove(root, e);
     }
 
-
     //宏观语义 返回删除e元素后的node节点
     private Node remove(Node node, E e) {
-
         if (node == null) {
             return null;
         }
-
-
         if (e.compareTo(node.e) < 0) {
             node.left = remove(node.left, e);
             return node;
         }
-
         if (e.compareTo(node.e) > 0) {
             node.right = remove(node.right, e);
             return node;
-        } else {
-
-            // if (e.compareTo(node.e) == 0)
-
+        } else {// if (e.compareTo(node.e) == 0)
             if (node.left == null) {
                 Node rightNode = node.right;
                 node.right = null;
                 size--;
                 return rightNode;
             }
-
             if (node.right == null) {
                 Node leftNode = node.left;
                 node.left = null;
@@ -301,15 +268,10 @@ public class BST<E extends Comparable<? super E>> {
             }
 
             // 左右子树都不为空
-
-            Node successor = minimun(node.right); // 查找又子树中最小的元素 前驱后继节点
+            Node successor = minimun(node.right); // 查找右子树中最小的元素 前驱后继节点
             successor.right = removeMin(node.right);
-
-
             successor.left = node.left;
-
             node.left = node.right = null;
-
             return successor;
         }
     }

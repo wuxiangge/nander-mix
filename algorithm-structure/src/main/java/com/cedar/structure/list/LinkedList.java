@@ -93,7 +93,6 @@ public class LinkedList<E> {
         for (int i = 0; i < index; i++) {
             cur = cur.next;
         }
-
         cur.e = e;
     }
 

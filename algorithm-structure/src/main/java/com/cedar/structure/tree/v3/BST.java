@@ -2,7 +2,6 @@ package com.cedar.structure.tree.v3;
 
 public class BST<K extends Comparable<K>, V> {
 
-
     public class Node {
 
         public K key;
@@ -10,7 +9,6 @@ public class BST<K extends Comparable<K>, V> {
         public V value;
 
         public Node left, right;
-
 
         public Node(K key, V value, Node left, Node right) {
             this.key = key;
@@ -25,27 +23,21 @@ public class BST<K extends Comparable<K>, V> {
 
     }
 
-
     private Node root;
 
-
     private int size;
-
 
     public boolean isEmpty() {
         return getSize() == 0;
     }
 
-
     public int getSize() {
         return size;
     }
 
-
     public void add(K key, V value) {
         root = add(root, key, value);
     }
-
 
     /**
      * 向以node为根的二分搜索树中添加键值对key value
@@ -69,7 +61,6 @@ public class BST<K extends Comparable<K>, V> {
             return node;
         }
     }
-
 
     public boolean contains(K key) {
         Node node = getNode(root, key);
@@ -113,14 +104,11 @@ public class BST<K extends Comparable<K>, V> {
         if (node == null) {
             return null;
         }
-
-
         if (key.compareTo(node.key) < 0) {
             return node.left = remove(node.left, key);
         } else if (key.compareTo(node.key) > 0) {
             return node.right = remove(node.right, key);
         } else { //key.compareTo(node.key) = 0
-
             if (node.left == null) {
                 Node rightNode = node.right;
                 node.right = null;
@@ -133,16 +121,13 @@ public class BST<K extends Comparable<K>, V> {
                 return leftNode;
             } else {
                 Node successor = minimum(node.right);
-
                 successor.left = node.left;
                 successor.right = remove(node, successor.key);
-
                 node.left = node.right = null;
                 return successor;
             }
         }
     }
-
 
     private Node minimum(Node node) {
         if (node.left == null) {
@@ -150,4 +135,5 @@ public class BST<K extends Comparable<K>, V> {
         }
         return minimum(node.left);
     }
+
 }
