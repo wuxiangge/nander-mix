@@ -6,7 +6,6 @@ package com.cedar.structure.map;
  */
 public class BSTMap<K extends Comparable<K>, V> implements Map<K, V> {
 
-
     private class Node {
         public K key;
 
@@ -20,7 +19,6 @@ public class BSTMap<K extends Comparable<K>, V> implements Map<K, V> {
             this.left = null;
             this.right = null;
         }
-
     }
 
 
@@ -116,17 +114,11 @@ public class BSTMap<K extends Comparable<K>, V> implements Map<K, V> {
                 return leftNode;
             }
 
-
             Node successor = mininum(node.right);
-
             successor.right = removeMin(node.right);
-
             successor.left = node.left;
-
             node.left = node.right = null;
-
             return successor;
-
         }
     }
 
@@ -135,7 +127,6 @@ public class BSTMap<K extends Comparable<K>, V> implements Map<K, V> {
         if (size == 0) {
             throw new IllegalArgumentException("BST is Empty");
         }
-
         return minimun(root).key;
     }
 

@@ -14,7 +14,6 @@ public class LinkedListMap<K, V> implements Map<K, V> {
 
         public Node next;
 
-
         public Node(K key, V value, Node next) {
             this.key = key;
             this.value = value;
@@ -25,11 +24,9 @@ public class LinkedListMap<K, V> implements Map<K, V> {
             this(key, null, null);
         }
 
-
         public Node() {
             this(null, null, null);
         }
-
 
     }
 

@@ -8,19 +8,14 @@ import com.cedar.structure.uf.UF;
  */
 public class UnionFind implements UF {
 
-
     private int[] id;
-
 
     public UnionFind(int size) {
         this.id = new int[size];
-
         for (int i = 0; i < id.length; i++) {
             id[i] = i;
         }
-
     }
-
 
     @Override
     public int getSize() {
@@ -38,11 +33,9 @@ public class UnionFind implements UF {
         int pId = find(p);
         int qId = find(q);
 
-
         if (pId == qId) {
             return;
         }
-
 
         for (int i = 0; i < id.length; i++) {
             if (id[i] == pId) {
@@ -51,14 +44,11 @@ public class UnionFind implements UF {
         }
     }
 
-
     // 查找元素p 所对应的 集合编号
     private int find(int p) {
-
         if (p < 0 || p >= id.length) {
             throw new IllegalArgumentException("p is out of bound");
         }
-
         return id[p];
     }
 

@@ -148,11 +148,8 @@ public class RBTree<K extends Comparable<K>, V> {
         if (isRed(node.left) && isRed(node.right)) {
             flipColors(node);
         }
-
         return node;
-
     }
-
 
     public boolean contains(K key) {
         Node node = getNode(root, key);
