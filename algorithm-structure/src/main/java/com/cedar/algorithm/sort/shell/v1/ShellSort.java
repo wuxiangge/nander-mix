@@ -32,14 +32,8 @@ public class ShellSort {
                         data[j] = data[j - h];
                     }
                     data[j] = ret;
-
-
                 }
-
-
             }
-
-
             h /= 2;
 
         }

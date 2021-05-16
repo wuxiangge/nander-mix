@@ -6,19 +6,12 @@ package com.cedar.algorithm.sort.shell.v2;
  */
 public class ShellSort {
 
-
     private ShellSort() {
-
     }
 
-
     public static <E extends Comparable<? super E>> void sort(E[] data) {
-
         int h = data.length / 2;
-
         while (h >= 1) {
-
-
             // 对data[start,start+h,start+2h... ] 进行插入排序
             for (int i = h; i < data.length; i ++) {
 

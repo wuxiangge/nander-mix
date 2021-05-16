@@ -6,7 +6,6 @@ public class Recursion {
 
     // 阶乘
     public int factorial(int n) {
-
         if (n == 0) {
             return 1;
         }
@@ -42,15 +41,12 @@ public class Recursion {
         if (n < 1 || m < 1) {
             return 0;
         }
-
         if (n == 1 || m == 1) {
             return 1;
         }
-
         if (n < m) {
             return q(n, n);
         }
-
         if (n == m) {
             return q(n, m - 1) + 1;
         }

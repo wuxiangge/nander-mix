@@ -9,13 +9,13 @@ public class BubbleSort {
     private BubbleSort() {
     }
 
-
     public static <E extends Comparable<? super E>> void sort(E[] data) {
         for (int i = 0; i + 1 < data.length; ) {
 
             // arr[n-i...n) 已经排好序了
 
             // 通过冒泡在arr[n-i-1] 放上合适的数据
+            // 9 1234567
 
             int lastSwappedIndex = 0;
             for (int j = 0; j < data.length - i - 1; j++) {

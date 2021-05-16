@@ -9,12 +9,9 @@ public class BubbleSort {
     private BubbleSort() {
     }
 
-
     public static <E extends Comparable<? super E>> void sort(E[] data) {
         for (int i = 0; i + 1 < data.length; i++) {
-
             // arr[n-i...n) 已经排好序了
-
             // 通过冒泡在arr[n-i-1] 放上合适的数据
             for (int j = 0; j < data.length - i - 1; j++) {
                 if (data[j].compareTo(data[j + 1]) > 0) {

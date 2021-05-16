@@ -10,7 +10,6 @@ public class QuickSort {
     public static <E extends Comparable<? super E>> void sort(E[] arr) {
         Random random = new Random();
         quickSort(arr, 0, arr.length - 1, random);
-
     }
 
     private static <E extends Comparable<? super E>> void quickSort(E[] arr, int l, int r, Random random) {

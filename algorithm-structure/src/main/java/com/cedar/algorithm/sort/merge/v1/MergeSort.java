@@ -40,8 +40,6 @@ public class MergeSort {
         mergeSortUpToDown(arr, mid + 1, r);
 
         merge(arr, l, mid, r);
-
-
     }
 
     /**

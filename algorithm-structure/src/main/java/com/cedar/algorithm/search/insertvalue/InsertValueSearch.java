@@ -28,9 +28,11 @@ public class InsertValueSearch {
         // 求出mid, 自适应
         int mid = left + (right - left) * (target - arr[left]) / (arr[right] - arr[left]);
         int midVal = arr[mid];
-        if (target > midVal) { // 说明应该向右边递归
+        // 说明应该向右边递归
+        if (target > midVal) {
             return insertValueSearch(arr, mid + 1, right, target);
-        } else if (target < midVal) { // 说明向左递归查找
+        } else if (target < midVal) {
+            // 说明向左递归查找
             return insertValueSearch(arr, left, mid - 1, target);
         } else {
             return mid;
