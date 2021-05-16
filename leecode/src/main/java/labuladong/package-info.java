@@ -138,7 +138,7 @@
  * <p>
  * <p>
  * <p>
- * 回溯算法框架
+ * 回溯算法框架 就是DFS
  * DFS 本质是一种暴力穷举法
  * <p>
  * <p>
@@ -163,5 +163,47 @@
  * <p>
  * 决策树
  * 为啥说这是决策树呢，因为你在每个节点上其实都在做决策
+ *
+ *
+ *
+ * BFS框架 Breadth First Search
+ * 使用队列这种数据结构
+ *
+ * BFS 找到的路径⼀定是最短的，但代价就是空间复杂度⽐ DFS ⼤很多
+ *
+// 计算从起点 start 到终点 target 的最近距离
+int BFS(Node start, Node target) {
+Queue<Node> q; // 核心数据结构
+Set<Node> visited; // 避免走回头路
+
+q.offer(start); // 将起点加入队列
+visited.add(start);
+int step = 0; // 记录扩散的步数
+
+while (q not empty) {
+int sz = q.size();
+将当前队列中的所有节点向四周扩散
+for (int i = 0; i < sz; i++) {
+Node cur = q.poll();
+划重点：这里判断是否到达终点
+if (cur is target)
+return step;
+将 cur 的相邻节点加入队列
+for (Node x : cur.adj())
+if (x not in visited) {
+q.offer(x);
+visited.add(x);
+}
+}
+划重点：更新步数在这里
+step++;
+}
+}
+
+
+
+
+ *
+ *
  */
 package labuladong;

@@ -24,7 +24,6 @@ public class BinarySearch {
             if (array[mid].compareTo(target) == 0) {
                 return mid;
             }
-
             if (array[mid].compareTo(target) < 0) {
                 l = mid + 1;
             } else {
