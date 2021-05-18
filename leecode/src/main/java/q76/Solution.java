@@ -46,7 +46,6 @@ public class Solution {
             return "";
         }
 
-
         int tLength = t.length();
         // 还可以使用数组来映射字符 ascII
         Map<Character, Integer> tMap = new HashMap<>(t.length());
