@@ -15,7 +15,7 @@ public class Solution {
         int max_k = 2;
         int[][][] dp = new int[n][max_k + 1][2];
         dp[0][0][0] = 0;
-        for (int k = 1;k<=max_k;k++) {
+        for (int k = 1; k <= max_k; k++) {
             dp[0][k][1] = -prices[0];
         }
 
@@ -31,6 +31,6 @@ public class Solution {
 
     public static void main(String[] args) {
         Solution solution = new Solution();
-        solution.maxProfit(new int[]{1,2,3,4,5});
+        solution.maxProfit(new int[]{1, 2, 3, 4, 5});
     }
 }
