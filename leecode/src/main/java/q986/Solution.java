@@ -92,13 +92,11 @@ public class Solution {
          */
 
         while (i < firstList.length && j < secondList.length) {
-
             int a1 = firstList[i][0];
             int a2 = firstList[i][1];
 
             int b1 = secondList[j][0];
             int b2 = secondList[j][1];
-
 
             if (b2 >= a1 && a2 >= b1) {
                 ans.add(new int[]{Math.max(a1, b1), Math.min(a2, b2)});
@@ -108,8 +106,8 @@ public class Solution {
             } else {
                 i++;
             }
-
         }
+
         return ans.toArray(new int[ans.size()][]);
     }
 }

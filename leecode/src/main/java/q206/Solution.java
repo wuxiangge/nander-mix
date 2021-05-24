@@ -16,7 +16,6 @@ package q206;
 //leetcode submit region begin(Prohibit modification and deletion)
 
 /**
- * todo...张楠
  * Definition for singly-linked list.
  * public class ListNode {
  * int val;
@@ -55,6 +54,22 @@ class Solution {
         head.next.next = head;
         head.next = null;
         return ret;
+    }
+
+
+    ListNode successor = null;
+
+    // 将链表的前 n 个节点反转（n <= 链表长度）
+    public ListNode reverseN(ListNode head, int n) {
+        if (n == 1) {
+            successor = head.next;
+            return head;
+        }
+
+        ListNode last = reverseN(head.next, n - 1);
+        head.next.next = head;
+        head.next = successor;
+        return last;
     }
 
 }
