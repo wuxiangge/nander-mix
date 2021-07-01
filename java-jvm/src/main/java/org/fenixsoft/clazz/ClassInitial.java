@@ -1,5 +1,8 @@
 package org.fenixsoft.clazz;
 
+/**
+ * 繁简切换
+ */
 public class ClassInitial {
 
 
@@ -14,5 +17,4 @@ public class ClassInitial {
         a++;
         b++;
     }
-
 }
