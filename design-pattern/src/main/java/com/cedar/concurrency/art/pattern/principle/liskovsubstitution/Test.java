@@ -12,7 +12,7 @@ public class Test {
         System.out.println("resize方法结束 width:" + rectangle.getWidth() + " length:" + rectangle.getLength());
     }
 
-    //    public static void main(String[] args) {
+//        public static void main(String[] args) {
 //        Rectangle rectangle = new Rectangle();
 //        rectangle.setWidth(10);
 //        rectangle.setLength(20);

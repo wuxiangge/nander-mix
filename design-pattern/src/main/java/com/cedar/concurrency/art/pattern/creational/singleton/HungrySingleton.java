@@ -13,7 +13,6 @@ public class HungrySingleton implements Serializable, Cloneable {
     private final static HungrySingleton hungrySingleton = new HungrySingleton();
 
     private HungrySingleton() {
-
     }
 
     public static HungrySingleton getInstance() {

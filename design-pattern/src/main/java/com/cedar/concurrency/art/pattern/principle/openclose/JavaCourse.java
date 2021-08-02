@@ -4,6 +4,7 @@ package com.cedar.concurrency.art.pattern.principle.openclose;
  * Created by geely
  */
 public class JavaCourse implements ICourse{
+
     private Integer Id;
     private String name;
     private Double price;

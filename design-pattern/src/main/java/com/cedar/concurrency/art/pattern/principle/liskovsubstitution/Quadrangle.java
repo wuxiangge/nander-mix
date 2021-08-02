@@ -6,5 +6,4 @@ package com.cedar.concurrency.art.pattern.principle.liskovsubstitution;
 public interface Quadrangle {
     long getWidth();
     long getLength();
-
 }
