@@ -231,7 +231,7 @@ public class Recursion {
 
 
     /**
-     * 简单字串搜搜算法
+     * 简单字串搜索算法
      *
      * @param t
      * @param p

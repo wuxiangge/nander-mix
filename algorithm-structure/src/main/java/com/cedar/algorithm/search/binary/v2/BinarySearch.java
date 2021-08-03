@@ -8,10 +8,8 @@ package com.cedar.algorithm.search.binary.v2;
  */
 public class BinarySearch {
 
-
     private BinarySearch() {
     }
-
 
     public static <E extends Comparable<? super E>> int search(E[] array, E target) {
         int l = 0;

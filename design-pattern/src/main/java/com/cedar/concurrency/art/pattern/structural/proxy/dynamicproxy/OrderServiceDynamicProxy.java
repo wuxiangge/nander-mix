@@ -20,7 +20,7 @@ public class OrderServiceDynamicProxy implements InvocationHandler {
     }
 
     public Object bind() {
-        Class clazz = target.getClass();
+        Class<?> clazz = target.getClass();
         return Proxy.newProxyInstance(clazz.getClassLoader(), clazz.getInterfaces(), this);
     }
 

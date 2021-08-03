@@ -18,4 +18,5 @@ public class StaticInnerClassSingleton {
     private static class InnerClass {
         private static StaticInnerClassSingleton staticInnerClassSingleton = new StaticInnerClassSingleton();
     }
+
 }
