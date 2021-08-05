@@ -10,7 +10,6 @@ public class Array<E> {
 
     private int size;
 
-
     public Array() {
         this(10);
     }

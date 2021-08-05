@@ -414,7 +414,6 @@ public class Sorts {
         // arr[l...lt-1]<v arr[lt...gt-1]===v arr[gt...r]>v
         quickSort3Way(arr, l, lt - 1, rnd);
         quickSort3Way(arr, gt, r, rnd);
-
     }
 
 
