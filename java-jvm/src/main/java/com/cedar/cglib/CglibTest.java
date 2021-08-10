@@ -12,7 +12,7 @@ public class CglibTest {
 
     public static void main(String[] args) {
         // 将cglib生成的class写入到E:\\classes文件夹中
-        System.setProperty(DebuggingClassWriter.DEBUG_LOCATION_PROPERTY, "/home/zhangnan/Desktop/GitHub/cedar/cedar-mix/classes");
+        System.setProperty(DebuggingClassWriter.DEBUG_LOCATION_PROPERTY, "./classes");
         MyInterceptor interceptor = new MyInterceptor();
         CglibTest cglibTest = (CglibTest) interceptor.getProxy(CglibTest.class);
         cglibTest.operate1("zhangsan");

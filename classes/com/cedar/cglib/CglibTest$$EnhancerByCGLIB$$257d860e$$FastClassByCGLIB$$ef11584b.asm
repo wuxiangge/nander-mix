@@ -55,14 +55,14 @@ public class com/cedar/cglib/CglibTest$$EnhancerByCGLIB$$257d860e$$FastClassByCG
     LDC "CGLIB$equals$1(Ljava/lang/Object;)Z"
     INVOKEVIRTUAL java/lang/Object.equals (Ljava/lang/Object;)Z
     IFEQ L23
-    BIPUSH 12
+    BIPUSH 8
     IRETURN
    L2
    FRAME FULL [com/cedar/cglib/CglibTest$$EnhancerByCGLIB$$257d860e$$FastClassByCGLIB$$ef11584b net/sf/cglib/core/Signature] [java/lang/String]
     LDC "CGLIB$STATICHOOK1()V"
     INVOKEVIRTUAL java/lang/Object.equals (Ljava/lang/Object;)Z
     IFEQ L23
-    BIPUSH 7
+    BIPUSH 9
     IRETURN
    L3
    FRAME FULL [com/cedar/cglib/CglibTest$$EnhancerByCGLIB$$257d860e$$FastClassByCGLIB$$ef11584b net/sf/cglib/core/Signature] [java/lang/String]
@@ -83,7 +83,7 @@ public class com/cedar/cglib/CglibTest$$EnhancerByCGLIB$$257d860e$$FastClassByCG
     LDC "CGLIB$findMethodProxy(Lnet/sf/cglib/core/Signature;)Lnet/sf/cglib/proxy/MethodProxy;"
     INVOKEVIRTUAL java/lang/Object.equals (Ljava/lang/Object;)Z
     IFEQ L23
-    BIPUSH 8
+    BIPUSH 12
     IRETURN
    L6
    FRAME FULL [com/cedar/cglib/CglibTest$$EnhancerByCGLIB$$257d860e$$FastClassByCGLIB$$ef11584b net/sf/cglib/core/Signature] [java/lang/String]
@@ -174,7 +174,7 @@ public class com/cedar/cglib/CglibTest$$EnhancerByCGLIB$$257d860e$$FastClassByCG
     LDC "CGLIB$clone$4()Ljava/lang/Object;"
     INVOKEVIRTUAL java/lang/Object.equals (Ljava/lang/Object;)Z
     IFEQ L23
-    BIPUSH 9
+    BIPUSH 7
     IRETURN
    L19
    FRAME FULL [com/cedar/cglib/CglibTest$$EnhancerByCGLIB$$257d860e$$FastClassByCGLIB$$ef11584b net/sf/cglib/core/Signature] [java/lang/String]
@@ -367,7 +367,7 @@ public class com/cedar/cglib/CglibTest$$EnhancerByCGLIB$$257d860e$$FastClassByCG
     INVOKEVIRTUAL java/lang/Object.equals (Ljava/lang/Object;)Z
     IFEQ L24
     POP
-    BIPUSH 12
+    BIPUSH 8
     IRETURN
    L34
    FRAME FULL [com/cedar/cglib/CglibTest$$EnhancerByCGLIB$$257d860e$$FastClassByCGLIB$$ef11584b java/lang/String [Ljava/lang/Class;] [[Ljava/lang/Class;]
@@ -514,7 +514,7 @@ public class com/cedar/cglib/CglibTest$$EnhancerByCGLIB$$257d860e$$FastClassByCG
    L47
    FRAME FULL [com/cedar/cglib/CglibTest$$EnhancerByCGLIB$$257d860e$$FastClassByCGLIB$$ef11584b java/lang/String [Ljava/lang/Class;] [[Ljava/lang/Class;]
     POP
-    BIPUSH 7
+    BIPUSH 9
     IRETURN
    L48
    FRAME FULL [com/cedar/cglib/CglibTest$$EnhancerByCGLIB$$257d860e$$FastClassByCGLIB$$ef11584b java/lang/String [Ljava/lang/Class;] [[Ljava/lang/Class;]
@@ -564,7 +564,7 @@ public class com/cedar/cglib/CglibTest$$EnhancerByCGLIB$$257d860e$$FastClassByCG
     INVOKEVIRTUAL java/lang/Object.equals (Ljava/lang/Object;)Z
     IFEQ L24
     POP
-    BIPUSH 8
+    BIPUSH 12
     IRETURN
    L52
    FRAME FULL [com/cedar/cglib/CglibTest$$EnhancerByCGLIB$$257d860e$$FastClassByCGLIB$$ef11584b java/lang/String [Ljava/lang/Class;] [[Ljava/lang/Class;]
@@ -732,7 +732,7 @@ public class com/cedar/cglib/CglibTest$$EnhancerByCGLIB$$257d860e$$FastClassByCG
    L66
    FRAME FULL [com/cedar/cglib/CglibTest$$EnhancerByCGLIB$$257d860e$$FastClassByCGLIB$$ef11584b java/lang/String [Ljava/lang/Class;] [[Ljava/lang/Class;]
     POP
-    BIPUSH 9
+    BIPUSH 7
     IRETURN
    L67
    FRAME FULL [com/cedar/cglib/CglibTest$$EnhancerByCGLIB$$257d860e$$FastClassByCGLIB$$ef11584b java/lang/String [Ljava/lang/Class;] [[Ljava/lang/Class;]
@@ -870,20 +870,23 @@ public class com/cedar/cglib/CglibTest$$EnhancerByCGLIB$$257d860e$$FastClassByCG
     ARETURN
    L9
    FRAME FULL [com/cedar/cglib/CglibTest$$EnhancerByCGLIB$$257d860e$$FastClassByCGLIB$$ef11584b I java/lang/Object [Ljava/lang/Object;] [com/cedar/cglib/CglibTest$$EnhancerByCGLIB$$257d860e]
-    INVOKESTATIC com/cedar/cglib/CglibTest$$EnhancerByCGLIB$$257d860e.CGLIB$STATICHOOK1 ()V
-    ACONST_NULL
+    INVOKEVIRTUAL com/cedar/cglib/CglibTest$$EnhancerByCGLIB$$257d860e.CGLIB$clone$4 ()Ljava/lang/Object;
     ARETURN
    L10
    FRAME FULL [com/cedar/cglib/CglibTest$$EnhancerByCGLIB$$257d860e$$FastClassByCGLIB$$ef11584b I java/lang/Object [Ljava/lang/Object;] [com/cedar/cglib/CglibTest$$EnhancerByCGLIB$$257d860e]
     ALOAD 3
     ICONST_0
     AALOAD
-    CHECKCAST net/sf/cglib/core/Signature
-    INVOKESTATIC com/cedar/cglib/CglibTest$$EnhancerByCGLIB$$257d860e.CGLIB$findMethodProxy (Lnet/sf/cglib/core/Signature;)Lnet/sf/cglib/proxy/MethodProxy;
+    INVOKEVIRTUAL com/cedar/cglib/CglibTest$$EnhancerByCGLIB$$257d860e.CGLIB$equals$1 (Ljava/lang/Object;)Z
+    NEW java/lang/Boolean
+    DUP_X1
+    SWAP
+    INVOKESPECIAL java/lang/Boolean.<init> (Z)V
     ARETURN
    L11
    FRAME FULL [com/cedar/cglib/CglibTest$$EnhancerByCGLIB$$257d860e$$FastClassByCGLIB$$ef11584b I java/lang/Object [Ljava/lang/Object;] [com/cedar/cglib/CglibTest$$EnhancerByCGLIB$$257d860e]
-    INVOKEVIRTUAL com/cedar/cglib/CglibTest$$EnhancerByCGLIB$$257d860e.CGLIB$clone$4 ()Ljava/lang/Object;
+    INVOKESTATIC com/cedar/cglib/CglibTest$$EnhancerByCGLIB$$257d860e.CGLIB$STATICHOOK1 ()V
+    ACONST_NULL
     ARETURN
    L12
    FRAME FULL [com/cedar/cglib/CglibTest$$EnhancerByCGLIB$$257d860e$$FastClassByCGLIB$$ef11584b I java/lang/Object [Ljava/lang/Object;] [com/cedar/cglib/CglibTest$$EnhancerByCGLIB$$257d860e]
@@ -906,11 +909,8 @@ public class com/cedar/cglib/CglibTest$$EnhancerByCGLIB$$257d860e$$FastClassByCG
     ALOAD 3
     ICONST_0
     AALOAD
-    INVOKEVIRTUAL com/cedar/cglib/CglibTest$$EnhancerByCGLIB$$257d860e.CGLIB$equals$1 (Ljava/lang/Object;)Z
-    NEW java/lang/Boolean
-    DUP_X1
-    SWAP
-    INVOKESPECIAL java/lang/Boolean.<init> (Z)V
+    CHECKCAST net/sf/cglib/core/Signature
+    INVOKESTATIC com/cedar/cglib/CglibTest$$EnhancerByCGLIB$$257d860e.CGLIB$findMethodProxy (Lnet/sf/cglib/core/Signature;)Lnet/sf/cglib/proxy/MethodProxy;
     ARETURN
    L15
    FRAME FULL [com/cedar/cglib/CglibTest$$EnhancerByCGLIB$$257d860e$$FastClassByCGLIB$$ef11584b I java/lang/Object [Ljava/lang/Object;] [com/cedar/cglib/CglibTest$$EnhancerByCGLIB$$257d860e]
