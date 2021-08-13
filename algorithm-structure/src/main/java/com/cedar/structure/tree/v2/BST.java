@@ -148,6 +148,22 @@ public class BST<E extends Comparable<? super E>> {
         }
     }
 
+    // 二分搜索树非递归操作 使用栈数据结构
+    //  栈和递归的等价性
+    public void inOrderNR() {
+        Deque<Node> stack = new LinkedList<>();
+        Node node = root;
+        while (node != null || !stack.isEmpty()) {
+            while (node != null) {
+                stack.push(node);
+                node = node.left;
+            }
+            node = stack.pop();
+            System.out.println(node.e);
+            node = node.right;
+        }
+    }
+
 
     // 层序遍历 使用队列
     public void levelOrder() {

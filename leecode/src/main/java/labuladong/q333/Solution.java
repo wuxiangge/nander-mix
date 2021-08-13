@@ -5,38 +5,45 @@ package labuladong.q333;
  * @date 2021/8/11
  */
 public class Solution {
-    private int result = 0;
+
+    private Integer result = 0;
 
     public int largestBSTSubtree(TreeNode root) {
         oneSideLargestBST(root);
         return result;
     }
 
-    private int oneSideLargestBST(TreeNode node) {
+    private NodeInfo oneSideLargestBST(TreeNode node) {
+        NodeInfo nodeInfo = new NodeInfo();
         if (node == null) {
-            return 0;
+            nodeInfo.isBst = true;
+            return nodeInfo;
         }
 
-        int left_value = oneSideLargestBST(node.left);
-        int right_value = oneSideLargestBST(node.right);
-        int ans = 0;
-
-        if (node.left != null && node.right != null) {
-            if (node.val > node.left.val && node.val < node.right.val && left_value != 0 && right_value != 0) {
-                ans = left_value + right_value + 1;
-            }
-        } else if (node.left != null) {
-            if (node.val > node.left.val && left_value != 0) {
-                ans = left_value + 1;
-            }
-        } else if (node.right != null && right_value != 0) {
-            if (node.val < node.right.val) {
-                ans = right_value + 1;
-            }
-        } else {
-            ans = 1;
+        NodeInfo leftNodeInfo = oneSideLargestBST(node.left);
+        NodeInfo rightNodeInfo = oneSideLargestBST(node.right);
+        int minValue = Math.min(node.val, Math.min(leftNodeInfo.min, rightNodeInfo.min));
+        int maxValue = Math.max(node.val, Math.max(leftNodeInfo.max, rightNodeInfo.max));
+        int nodeCount = leftNodeInfo.size + rightNodeInfo.size + 1;
+        boolean flag = (leftNodeInfo.isBst && rightNodeInfo.isBst && node.val > leftNodeInfo.max && node.val < rightNodeInfo.min);
+        if (flag) {
+            result = Math.max(nodeCount, result);
         }
-        result = Math.max(ans, result);
-        return ans;
+        nodeInfo.isBst = flag;
+        nodeInfo.min = minValue;
+        nodeInfo.max = maxValue;
+        nodeInfo.size = nodeCount;
+        return nodeInfo;
+    }
+
+
+    static class NodeInfo {
+        int min = Integer.MAX_VALUE;
+        int max = Integer.MIN_VALUE;
+        int size = 0;
+        boolean isBst = false;
+
+        public NodeInfo() {
+        }
     }
 }
