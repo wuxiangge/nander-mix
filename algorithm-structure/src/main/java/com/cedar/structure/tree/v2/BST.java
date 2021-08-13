@@ -148,7 +148,7 @@ public class BST<E extends Comparable<? super E>> {
         }
     }
 
-    // 二分搜索树非递归操作 使用栈数据结构
+    //  二分搜索树非递归操作 使用栈数据结构
     //  栈和递归的等价性
     public void inOrderNR() {
         Deque<Node> stack = new LinkedList<>();
