@@ -34,6 +34,28 @@ public class Sorts {
     }
 
 
+    // 最大堆排序
+    public static <E extends Comparable<? super E>> void maxHeapSort(E[] arr) {
+        // 排序思想 父元素大于它的两个子元素
+
+
+        // base case
+        if (arr.length <= 1) {
+            return;
+        }
+
+
+    }
+
+
+    /**
+     * 下沉操作
+     *
+     * @param arr
+     * @param index
+     * @param n
+     * @param <E>
+     */
     private static <E extends Comparable<? super E>> void siftDown(E[] arr, int index, int n) {
 
         while (leftChild(index) < n) {
@@ -45,7 +67,6 @@ public class Sorts {
             }
 
             // data[j] 是 leftChild rightChild 中的最大值
-
             if (arr[index].compareTo(arr[j]) > 0) {
                 break;
             }
