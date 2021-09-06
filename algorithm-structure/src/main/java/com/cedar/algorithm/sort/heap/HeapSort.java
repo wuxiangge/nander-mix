@@ -23,6 +23,7 @@ public class HeapSort {
 
         for (int i = data.length - 1; i >= 0; i--) {
             E e = maxHeap.extractMax();
+            data[i] = e;
         }
 
     }

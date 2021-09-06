@@ -20,7 +20,9 @@ public class Sorts {
     // 堆排序算法
     public static <E extends Comparable<? super E>> void heapSort(E[] arr) {
 
-        if (arr.length <= 1) return;
+        if (arr.length <= 1) {
+            return;
+        }
 
         for (int i = getParent(arr.length - 1); i >= 0; i--) {
             siftDown(arr, i, arr.length);
@@ -28,22 +30,8 @@ public class Sorts {
 
         for (int i = arr.length - 1; i >= 0; i--) {
             swap(arr, 0, i);
-            siftDown(arr, 0, i);
+            siftDown(arr, 0, i - 1);
         }
-
-    }
-
-
-    // 最大堆排序
-    public static <E extends Comparable<? super E>> void maxHeapSort(E[] arr) {
-        // 排序思想 父元素大于它的两个子元素
-
-
-        // base case
-        if (arr.length <= 1) {
-            return;
-        }
-
 
     }
 
