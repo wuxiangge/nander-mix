@@ -1,4 +1,4 @@
-package com.cedar.structure.uf.v2;
+package com.cedar.structure.uf.v3;
 
 import com.cedar.structure.uf.UF;
 
@@ -41,6 +41,7 @@ public class UnionFind implements UF {
             return;
         }
 
+        // 小数接到大树下面比较平衡
         if (size[rootP] > size[rootQ]) {
             parent[rootQ] = rootP;
             size[rootP] += size[rootQ];
@@ -60,6 +61,8 @@ public class UnionFind implements UF {
      */
     private int find(int n) {
         while (n != parent[n]) {
+            // 路径压缩
+            parent[n] = parent[parent[n]];
             n = parent[n];
         }
         return n;
