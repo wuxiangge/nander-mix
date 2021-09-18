@@ -1,7 +1,7 @@
 package com.cedar.algorithm.sort;
 
-import java.util.Arrays;
-import java.util.Random;
+import java.util.*;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author zhangnan
@@ -16,6 +16,22 @@ public class Sorts {
     public static <E extends Comparable<? super E>> void sort(E[] arr) {
 
     }
+
+    public static void main(String[] args) throws InterruptedException {
+        PriorityQueue<Date> pq = new PriorityQueue<>((a,b)->{
+            return a.compareTo(b);
+        });
+
+        for (int i = 0; i < 10; i++) {
+            TimeUnit.SECONDS.sleep(1);
+            pq.add(new Date());
+        }
+        while (!pq.isEmpty()) {
+            Date poll = pq.poll();
+            System.out.println(poll);
+        }
+    }
+
 
     // 堆排序算法
     public static <E extends Comparable<? super E>> void heapSort(E[] arr) {

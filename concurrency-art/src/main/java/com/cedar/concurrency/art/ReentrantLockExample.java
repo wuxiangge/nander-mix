@@ -1,5 +1,6 @@
 package com.cedar.concurrency.art;
 
+import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
@@ -8,16 +9,16 @@ import java.util.concurrent.locks.ReentrantLock;
  */
 public class ReentrantLockExample {
 
-
     int a = 0;
 
     ReentrantLock lock = new ReentrantLock();
 
-
     public void write() {
+        Condition condition = lock.newCondition();
         lock.lock();
 
         try {
+            condition.await();
             a++;
         } finally {
             lock.unlock();
@@ -44,7 +45,6 @@ public class ReentrantLockExample {
                 @Override
                 public void run() {
                     example.reader();
-                    ;
                     example.write();
                 }
             }).start();
