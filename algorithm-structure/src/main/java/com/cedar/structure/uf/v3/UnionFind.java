@@ -15,8 +15,8 @@ public class UnionFind implements UF {
 
     public UnionFind(int count) {
         this.count = count;
-        parent = new int[count];
-        size = new int[count];
+        this.parent = new int[count];
+        this.size = new int[count];
         for (int i = 0; i < count; i++) {
             parent[i] = i;
             size[i] = 1;
@@ -67,4 +67,19 @@ public class UnionFind implements UF {
         }
         return n;
     }
+
+
+    /**
+     * result = []
+     * backtrack(路径,选择列表):
+     *      if(满足条件):
+     *          result.add(路径)
+     *          return
+     *
+     *      for(选择 in 选择列表) {
+     *          做选择
+     *          backtrack(路径,选择列表)
+     *          撤销选择
+     *      }
+     */
 }
