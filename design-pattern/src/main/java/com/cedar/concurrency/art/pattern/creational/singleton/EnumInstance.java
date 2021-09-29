@@ -7,24 +7,7 @@ package com.cedar.concurrency.art.pattern.creational.singleton;
  */
 public enum EnumInstance {
 
-    INSTANCE {
-        @Override
-        public void printInfo() {
-            System.out.println("测试反编译");
-        }
-    };
-
-    public abstract void printInfo();
-
-    private Object data;
-
-    public Object getData() {
-        return data;
-    }
-
-    public void setData(Object data) {
-        this.data = data;
-    }
+    INSTANCE;
 
     public static EnumInstance getInstance() {
         return INSTANCE;
