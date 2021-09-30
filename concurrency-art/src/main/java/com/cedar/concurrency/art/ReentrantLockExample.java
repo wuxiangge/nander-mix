@@ -20,6 +20,8 @@ public class ReentrantLockExample {
         try {
             condition.await();
             a++;
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         } finally {
             lock.unlock();
         }
