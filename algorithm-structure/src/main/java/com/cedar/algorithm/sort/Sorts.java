@@ -328,6 +328,45 @@ public class Sorts {
         quickSort(arr, p + 1, r, random);
     }
 
+    /**
+     * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+     *
+     * @param nums   int整型一维数组
+     * @param values int整型一维数组
+     * @return int整型
+     */
+    public int getMaxValue(int[] nums, int[] values) {
+        // write code here
+        if (nums == null || values == null || nums.length == 0 || values.length == 0) {
+            return 0;
+        }
+
+        int length = nums.length;
+
+        int left = 0;
+        int right = length - 1;
+        int times = 1;
+
+        int[] dp = new int[length + 1];
+        dp[0] = 0;
+
+        for (int value : values) {
+            if (left > right) {
+                return dp[nums.length];
+            }
+
+            if (nums[left] > nums[right]) {
+                dp[times] = dp[times - 1] + nums[left] * value;
+                left++;
+            } else {
+                dp[times] = dp[times - 1] + nums[right] * value;
+                right--;
+            }
+            times++;
+        }
+
+        return dp[nums.length];
+    }
     // 快速排序算法核心
     private static <E extends Comparable<? super E>> int partition(E[] arr, int l, int r, Random random) {
 
