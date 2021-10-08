@@ -71,7 +71,10 @@ public class Solution {
 
     public int coinChange(int[] coins, int amount) {
         int max = amount + 1;
+
+        // 定义dp[i]的含义为 总金额为i时 需要的兑换的最小次数
         int[] dp = new int[amount + 1];
+
         Arrays.fill(dp, max);
         dp[0] = 0;
         for (int i = 1; i <= amount; i++) {
