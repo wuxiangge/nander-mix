@@ -9,6 +9,13 @@ import java.util.Set;
  */
 public class Solution {
 
+
+    /**
+     * 求字符串中没有重复的最长子串
+     *
+     * @param s
+     * @return
+     */
     public int lengthOfLongestSubstring(String s) {
         if (s == null || s.length() == 0) {
             return 0;
@@ -34,5 +41,8 @@ public class Solution {
         }
         return ans;
     }
+
+    // 滑动窗口
+
 
 }
