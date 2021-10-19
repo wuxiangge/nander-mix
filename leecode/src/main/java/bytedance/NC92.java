@@ -56,4 +56,9 @@ public class NC92 {
         }
         return sb.reverse().toString();
     }
+
+
+    public static void main(String[] args) {
+        new NC92().LCS("zabcde", "acez");
+    }
 }
