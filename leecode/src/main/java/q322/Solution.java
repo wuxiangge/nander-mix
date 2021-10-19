@@ -86,4 +86,40 @@ public class Solution {
         }
         return dp[amount] > amount ? -1 : dp[amount];
     }
+
+    public int minFallingPathSum(int[][] matrix) {
+        int length = matrix.length;
+
+        // 定义dp数组:dp[i][j]的下降路径
+        int[][] dp = new int[length + 1][length + 1];
+
+        // base case
+        for (int i = 0; i < length; i++) {
+            dp[0][i] = matrix[0][i];
+        }
+
+        for (int i = 1; i < length; i++) {
+            for (int j = 0; j < length; j++) {
+                int up_left = Integer.MAX_VALUE;
+                int up = dp[i - 1][j];
+                int up_right = Integer.MAX_VALUE;
+
+                if (j - 1 >= 0) {
+                    up_left = dp[i - 1][j - 1];
+                }
+
+                if (j + 1 < length) {
+                    up_right = dp[i - 1][j + 1];
+                }
+                dp[i][j] = Math.min(up, Math.min(up_left, up_right)) + matrix[i][j];
+            }
+        }
+
+        int res = Integer.MAX_VALUE;
+        for (int i = 0; i < length; i++) {
+            res = Math.min(res, dp[length - 1][i]);
+        }
+        return res;
+    }
+
 }
