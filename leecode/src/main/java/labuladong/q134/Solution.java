@@ -119,7 +119,6 @@ class Solution {
 
     public int canCompleteCircuit3(int[] gas, int[] cost) {
 
-
         int n = gas.length;
         int sum = 0;
         for (int i = 0; i < n; i++) {

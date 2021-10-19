@@ -58,7 +58,6 @@ class Solution {
 
         // int[][] dp
         // 定义text1[0...i-1] 和 text2[0...j-1]的最长公共子序列为 dp[i][j]
-
         int m = text1.length();
         int n = text2.length();
         int[][] dp = new int[m + 1][n + 1];
@@ -75,5 +74,7 @@ class Solution {
         }
         return dp[m][n];
     }
+
+
 }
 //leetcode submit region end(Prohibit modification and deletion)
