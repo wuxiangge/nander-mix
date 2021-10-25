@@ -28,4 +28,20 @@ public class SubStringMatch {
         return -1;
     }
 
+
+
+    // 字符串暴力匹配算法优化
+    // 字符串转换成hash
+    /**
+     * code
+     * hash(code) = (c*B^3 + o*B^2 + d*B^1 + e*B^0) %M
+     * hash(code) = (((c*B+ o)%M *B + d)%M *B +e)%M
+     *
+     * int hash = 0;
+     * for(int i = 0; i<s.length(); i++) {
+     *     hash = (hash * B + s.charAt(i))%M;
+     * }
+     *
+     */
+
 }
