@@ -62,9 +62,7 @@ package q518;
 class Solution {
     public int change(int amount, int[] coins) {
 
-
         //若只使用前i个物品，当背包容量为j时，有dp[i][j]种方法可以装满背包
-
         int n = coins.length;
 
         int[][] dp = new int[n + 1][amount + 1];
@@ -73,7 +71,6 @@ class Solution {
         for (int i = 0; i <= n; i++) {
             dp[i][0] = 1;
         }
-
 
         for (int i = 1; i <= n; i++) {
             for (int j = 1; j <= amount; j++) {
@@ -84,9 +81,7 @@ class Solution {
                 }
             }
         }
-
         return dp[n][amount];
-
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
