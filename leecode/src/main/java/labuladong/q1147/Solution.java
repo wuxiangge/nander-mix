@@ -42,7 +42,7 @@ public class Solution {
             String left = text.substring(begin, begin + len);
             String right = text.substring(j, len + j);
 
-            if (left.equalsIgnoreCase(right)) {
+            if (left.equals(right)) {
                 return 2 + dfs2(begin + len, j - 1, text);
             }
 
