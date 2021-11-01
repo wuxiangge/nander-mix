@@ -46,6 +46,7 @@ public class Solution {
                 happy = i;
             }
         }
+
         return s.substring(0, happy);
     }
 
